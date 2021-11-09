@@ -1,0 +1,61 @@
+.colors
+  mixin color(textClass, colorName, colorHex)
+    .colors__wrapper
+      div(class=`colors__rectangle colors__rectangle${textClass}`)
+      .colors__color-name
+        p(class='colors__color-name__text colors__color-name__text_bold')= colorName
+        p(class='colors__color-name__text')= colorHex
+  - var primeColor = '#1F2041'   
+  - 
+    var colors = [
+      {styleText: '_dark-100', text: 'Dark Shade 100%', color: `${primeColor}`},
+      {styleText: '_dark-75', text: 'Dark Shade 75%', color: `${primeColor}`},
+      {styleText: '_dark-50', text: 'Dark Shade 50%', color: `${primeColor}`},
+      {styleText: '_dark-25', text: 'Dark Shade 25%', color: `${primeColor}`},
+      {styleText: '_dark-5', text: 'Dark Shade 5%', color: `${primeColor}`},
+      {styleText: '_purple', text: 'Purple', color: '#BC9CFF'},
+      {styleText: '_green', text: 'Green', color: '#6FCF97'},
+      ]
+  each val in colors
+    +color(val.styleText, val.text, val.color)
+    //- +color('_dark-75', 'Dark Shade 75%', primeColor)
+    //- +color('_dark-50', 'Dark Shade 50%', primeColor)
+    //- +color('_dark-25', 'Dark Shade 25%', primeColor)
+    //- +color('_dark-5', 'Dark Shade 5%', primeColor)
+    //- +color('_purple', 'Purple', '#BC9CFF')
+    //- +color('_green', 'Green', '#6FCF97')
+    //- .colors__wrapper  
+    //-   .colors__rectangle.colors__rectangle_dark-100
+    //-   .colors__color-name 
+    //-     p(class='colors__color-name_text-bold') Dark Shade 100%
+    //-     p #6FCF97
+    //- .colors__wrapper        
+    //-   .colors__rectangle.colors__rectangle_dark-75
+    //-   .colors__color-name 
+    //-     p Dark Shade 75%
+    //-     p #6FCF97
+    //- .colors__wrapper        
+    //-   .colors__rectangle.colors__rectangle_dark-50
+    //-   .colors__color-name 
+    //-     p Dark Shade 50% 
+    //-     p #6FCF97
+    //- .colors__wrapper        
+    //-   .colors__rectangle.colors__rectangle_dark-25
+    //-   .colors__color-name 
+    //-     p Dark Shade 25%
+    //-     p #6FCF97
+    //- .colors__wrapper        
+    //-   .colors__rectangle.colors__rectangle_dark-5
+    //-   .colors__color-name 
+    //-     p Dark Shade 5%
+    //-     p #6FCF97
+    //- .colors__wrapper        
+    //-   .colors__rectangle.colors__rectangle_purple
+    //-   .colors__color-name 
+    //-     p Purple
+    //-     p #BC9CFF
+    //- .colors__wrapper        
+    //-   .colors__rectangle.colors__rectangle_green
+    //-   .colors__color-name 
+    //-     p Green 
+    //-     p #6FCF97

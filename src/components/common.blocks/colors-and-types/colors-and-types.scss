@@ -1,0 +1,9 @@
+@import "/components/common.blocks/colors-and-types/colors/colors.scss";
+@import "/components/common.blocks/colors-and-types/type/type.scss";
+
+.colors-and-types {
+  display: flex;
+  justify-content: space-between;
+  padding: 145px 158px 125px 150px;
+  position: relative;
+}
