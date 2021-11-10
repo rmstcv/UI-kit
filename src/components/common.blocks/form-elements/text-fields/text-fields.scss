@@ -1,0 +1,13 @@
+.field-default {
+  margin-bottom: 20px;
+  &__text-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__text {
+    &_light {
+      color: $color-dark-50;
+      font-weight: normal;
+    }
+  }
+}

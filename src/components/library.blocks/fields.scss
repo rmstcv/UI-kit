@@ -1,0 +1,37 @@
+.field-default {
+  width: 320px;
+  &__text {
+    @include type-h3;
+  }
+  &__input {
+    width: 320px;
+    height: 44px;
+    border: 1px solid $color-dark-25;
+    border-radius: 4px;
+    padding-left: 15px;
+    margin-top: 5px;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: $color-dark-75;
+    &::placeholder {
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+      color: $color-dark-25;
+    }
+    &_focus {
+      border-color: $color-dark-50;
+    }
+  }
+  &__dropdown {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 44px;
+      height: 44px;
+      margin-top: 5px;
+      background-color: $color-dark-50;
+      transform: translateX(-100%);
+    }
+  }
+}
