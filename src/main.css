@@ -2,7 +2,7 @@
 @import "./libs/colors.scss";
 @import "./libs/types.scss";
 
-@import "./components/library.blocks/fields.scss";
+@import "./components/library.blocks/fields/fields.scss";
 
 @import "./components/common.blocks/logo/logo.scss";
 @import "./components/common.blocks/colors-and-types/colors-and-types.scss";
