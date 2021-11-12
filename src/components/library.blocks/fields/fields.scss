@@ -1,4 +1,5 @@
 .field-default {
+  position: relative;
   width: 320px;
   &_small {
     width: 150px;
@@ -31,26 +32,6 @@
       border-color: $color-dark-50;
     }
   }
-  &__dropdown {
-    position: relative;
-    &::after {
-      content: "";
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      margin-top: 5px;
-      border: 2px solid black;
-      border-left: 2px solid black;
-      border-bottom: 2px solid black;
-      transform: translateX(-100%);
-      right: 22px;
-      top: 12px;
-      transform: rotate(-45deg) translate(0);
-    }
-  }
-}
-
-.field-default {
   &__check-wrapper {
     width: 44px;
     height: 44px;
@@ -60,12 +41,34 @@
   }
   &__check-mark {
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 9px;
+    height: 9px;
     border-left: 2px solid $color-dark-50;
     border-bottom: 2px solid $color-dark-50;
     bottom: 50%;
     left: 50%;
     transform: rotate(-45deg) translate(-50%);
+    &_subscr {
+      position: absolute;
+      width: 11px;
+      height: 11px;
+      border-color: $color-purple;
+      transform: rotate(-135deg) translate(-50%);
+      left: 13px;
+      top: 14px;
+      &::after {
+        content: "";
+        position: absolute;
+        background-color: $color-purple;
+        width: 12px;
+        height: 2px;
+        transform: rotate(135deg) translateX(45%) translateY(-65%);
+      }
+    }
+  }
+  &_dropdown {
+    &::placeholder {
+      color: $color-dark-75;
+    }
   }
 }

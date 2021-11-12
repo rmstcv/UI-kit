@@ -2,7 +2,9 @@ mixin field-default(options)
   - 
     var fieldLength = ""
     fieldLength += options.isSmall ? "field-default field-default_small" : options.isMedium ? "field-default field-default_medium" : "field-default"
-  
+    var fieldClassName = ""
+    fieldClassName += options.dropdown ? "field-default_dropdown" : ""
+
   div(class = fieldLength)
     .field-default__text-wrapper
       p(class="field-default__text")= options.fieldName
@@ -16,10 +18,13 @@ mixin field-default(options)
     //-   input(class="field-default__input" type= options.type placeholder= options.placeholder)
 
 
-    - var fieldClassName = ""
-      if options.dropdown
-        div(class = fieldClassName)
-          .field-default__check-wrapper
-            .field-default__check-mark
+    
+    if options.dropdown   
+      .field-default__check-wrapper
+        .field-default__check-mark
 
-      input(class="field-default__input" type= options.type placeholder= options.placeholder)
+    if options.subscr 
+      .field-default__check-wrapper
+       .field-default__check-mark.field-default__check-mark_subscr
+
+    input(class=`field-default__input ${fieldClassName}` type= options.type placeholder= options.placeholder)

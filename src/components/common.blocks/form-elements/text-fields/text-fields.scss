@@ -1,31 +1,45 @@
-.field-wrapper {
-  &_input-focused {
+.fields-wrapper {
+  width: 320px;
+  .field-wrapper {
+    position: relative;
+    margin-top: 23px;
+    &_input-focused {
+      .field-default {
+        &__input {
+          border-color: $color-dark-50;
+        }
+      }
+    }
+    &__text {
+      position: absolute;
+      right: 0;
+      @include type-h3;
+      color: $color-dark-50;
+      font-weight: normal;
+    }
     .field-default {
-      &__input {
-        border-color: $color-dark-50;
+      &__text-wrapper {
+        display: flex;
+        justify-content: space-between;
+      }
+      &__text {
+        &_light {
+          color: $color-dark-50;
+          font-weight: normal;
+        }
       }
     }
   }
-  width: 320px;
-  position: relative;
-  &__text {
-    position: absolute;
-    right: 0;
-    @include type-h3;
-    color: $color-dark-50;
-    font-weight: normal;
+  .field-wrapper:first-child {
+    margin-top: 0;
   }
-}
-.field-default {
-  margin-bottom: 20px;
-  &__text-wrapper {
-    display: flex;
-    justify-content: space-between;
-  }
-  &__text {
-    &_light {
-      color: $color-dark-50;
-      font-weight: normal;
+  .dropdown-wrapper {
+    .date-dropdown-wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+    .field-default {
+      margin-top: 42px;
     }
   }
 }
