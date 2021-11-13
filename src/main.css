@@ -1,23 +1,18 @@
 @import "./libs/fonts.css";
 @import "./libs/colors.scss";
 @import "./libs/types.scss";
-
 @import "./components/library.blocks/fields/fields.scss";
-
+@import "./components/library.blocks/buttons/buttons.scss";
 @import "./components/common.blocks/logo/logo.scss";
 @import "./components/common.blocks/colors-and-types/colors-and-types.scss";
 @import "./components/common.blocks/form-elements/form-elements.scss";
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-size: 10px;
-}
-
-body {
   font-family: 'Montserrat', Arial, sans-serif;
-  
+  font-size: 10px;
+  color: #1f2041;
 }
 
 .container {

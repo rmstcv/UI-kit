@@ -9,16 +9,6 @@ mixin field-default(options)
     .field-default__text-wrapper
       p(class="field-default__text")= options.fieldName
 
-    //- - 
-    //-   var fieldClassName = ""
-    //-   fieldClassName += options.dropdown ? "field-default__dropdown" : ""
-
-    //- div(class = fieldClassName)
-    //-   .field-default__check
-    //-   input(class="field-default__input" type= options.type placeholder= options.placeholder)
-
-
-    
     if options.dropdown   
       .field-default__check-wrapper
         .field-default__check-mark
@@ -26,5 +16,9 @@ mixin field-default(options)
     if options.subscr 
       .field-default__check-wrapper
        .field-default__check-mark.field-default__check-mark_subscr
+
+    if options.date 
+      .field-default__check-wrapper
+       .field-default__date
 
     input(class=`field-default__input ${fieldClassName}` type= options.type placeholder= options.placeholder)

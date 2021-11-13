@@ -27,7 +27,7 @@
     +field-default({
       fieldName: "MASKED TEXT FIELD", 
       type: "text", 
-      placeholder: "ДД.ММ.ГГ",
+      placeholder: "ДД.ММ.ГГГГ",
     })
 
   .dropdown-wrapper
@@ -35,9 +35,10 @@
       +field-default({
         fieldName: "DATE DROPDOWN", 
         type: "text", 
-        placeholder: "ДД.ММ.ГГ",
+        placeholder: "ДД.ММ.ГГГГ",
         isSmall: true,
-        dropdown: true
+        dropdown: true,
+        date: true
     })
     
       +field-default({
@@ -45,7 +46,8 @@
         type: "text", 
         placeholder: "19.08.2019",
         isSmall: true,
-        dropdown: true
+        dropdown: true,
+        date: true
     })
 
     +field-default({
@@ -53,7 +55,8 @@
         type: "text", 
         placeholder: "19 авг - 23 авг",
         dropdown: true,
-        isMedium: true
+        isMedium: true,
+        date: true
     })
 
     +field-default({

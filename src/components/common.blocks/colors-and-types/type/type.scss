@@ -5,17 +5,30 @@
   &__item {
     width: 37px;
     text-align: right;
+    font-weight: normal;
     &_h1 {
       @include type-h1;
+      &_lighter {
+        color: $color-dark-25;
+      }
     }
     &_h2 {
       @include type-h2;
+      &_lighter {
+        color: $color-dark-25;
+      }
     }
     &_h3 {
       @include type-h3;
+      &_lighter {
+        color: $color-dark-25;
+      }
     }
     &_body {
       @include type-body;
+      &_lighter {
+        color: $color-dark-25;
+      }
     }
   }
   &__text {

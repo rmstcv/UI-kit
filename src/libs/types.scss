@@ -1,28 +1,35 @@
+$size-h1: 2.4rem;
+$size-h2: 1.9rem;
+$size-h3: 1.2rem;
+$size-body: 1.4rem;
+$type-main-color: $color-dark-100;
+$type-second-color: $color-dark-75;
+
 @mixin type-h1 {
-  font-size: 2.4rem;
+  font-size: $size-h1;
   line-height: 2.9rem;
-  color: $color-dark-100;
+  color: $type-main-color;
   font-weight: 700;
 }
 
 @mixin type-h2 {
-  font-size: 1.9rem;
+  font-size: $size-h2;
   line-height: 2.3rem;
-  color: $color-dark-100;
+  color: $type-main-color;
   font-weight: 700;
 }
 
 @mixin type-h3 {
-  font-size: 1.2rem;
+  font-size: $size-h3;
   line-height: 1.4rem;
-  color: $color-dark-100;
+  color: $type-main-color;
   font-weight: 700;
   text-transform: uppercase;
 }
 
 @mixin type-body {
-  font-size: 1.4rem;
+  font-size: $size-body;
   line-height: 2.4rem;
-  color: $color-dark-75;
+  color: $type-second-color;
   font-weight: normal;
 }

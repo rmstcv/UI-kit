@@ -1,0 +1,6 @@
+mixin checkbox(options)
+  .checkbox
+    each val in options.item
+      .checkbox__item
+        input(class="checkbox__input checkbox__custom" type="checkbox" name=val.name value=val.content)
+        label(class="checkbox__label" for=val.content)= val.content
