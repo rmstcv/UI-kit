@@ -1,8 +1,6 @@
-.checkbox {
-  &__item {
-    margin-top: 12px;
-  }
-  &__item:first-child {
+.checkbox-button {
+  margin-top: 12px;
+  &:first-child {
     margin-top: 0;
   }
   &__custom {
@@ -36,19 +34,171 @@
     z-index: -1;
     position: relative;
     display: flex;
-    font-weight: normal;
-    font-size: $size-body;
-    color: $color-dark-50;
     &::before {
       content: "";
-      display: inline-block;
       width: 20px;
       height: 20px;
       flex-shrink: 0;
-      flex-grow: 0;
       border: 1px solid rgba(31, 32, 65, 0.25);
       border-radius: 4px;
       margin-right: 1rem;
     }
   }
+  &__content {
+    font-weight: normal;
+    font-size: $size-body;
+    color: $color-dark-50;
+    margin-top: calc(20px / 2 - $size-body/2);
+  }
+}
+
+.radio-button {
+  &__custom {
+    position: absolute;
+    opacity: 0;
+    width: 23px;
+    height: 23px;
+    &:checked + label::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      border: 1px solid $color-second;
+      border-radius: 10px;
+      margin-right: 1rem;
+    }
+    &:checked + label::after {
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border-radius: 10px;
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      top: 50%;
+      transform: translate(40%, -50%);
+    }
+  }
+  &__label {
+    z-index: -1;
+    position: relative;
+    display: flex;
+    font-weight: normal;
+    font-size: $size-body;
+    color: $color-dark-50;
+    &::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      border: 1px solid rgba(31, 32, 65, 0.25);
+      border-radius: 10px;
+      margin-right: 1rem;
+    }
+  }
+}
+
+.toggle-button {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  &__custom {
+    position: absolute;
+    opacity: 0;
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    // &:checked + label::before {
+    //   content: "";
+    //   width: 40px;
+    //   height: 20px;
+    //   flex-shrink: 0;
+    //   border: 1px solid #bc9cff;
+    //   border-radius: 10px;
+    //   margin-right: 1rem;
+    // }
+    // &:checked + label::after {
+    //   content: "";
+    //   width: 12px;
+    //   height: 12px;
+    //   flex-shrink: 0;
+    //   background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    //   border-radius: 10px;
+    //   margin-right: 1rem;
+    //   left: 10%;
+    // }
+  }
+  &__label {
+    z-index: -1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    // &::before {
+    //   content: "";
+    //   width: 40px;
+    //   height: 20px;
+    //   flex-shrink: 0;
+    //   border: 1px solid rgba(31, 32, 65, 0.25);
+    //   border-radius: 10px;
+    //   margin-right: 1rem;
+    // }
+    // &::after {
+    //   position: absolute;
+    //   content: "";
+    //   width: 12px;
+    //   height: 12px;
+    //   flex-shrink: 0;
+    //   background: rgba(31, 32, 65, 0.25);
+    //   border-radius: 10px;
+    //   margin-right: 1rem;
+    //   left: 4%;
+    // }
+  }
+  &__content {
+    font-weight: normal;
+    font-size: $size-body;
+    color: $color-dark-50;
+    margin-top: calc(20px / 2 - $size-body/2);
+  }
+}
+
+.toggle-button {
+  &__icon-out {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    flex-shrink: 0;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 10px;
+    margin-right: 1rem;
+  }
+  &__icon-in {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    background: rgba(31, 32, 65, 0.25);
+    border-radius: 10px;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+  }
+}
+
+.toggle-button__custom:checked + label .toggle-button__icon-out {
+  width: 40px;
+  height: 20px;
+  flex-shrink: 0;
+  border: 1px solid #bc9cff;
+  border-radius: 10px;
+  margin-right: 1rem;
+}
+
+.toggle-button__custom:checked + label .toggle-button__icon-in {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  border-radius: 10px;
+  top: 50%;
+  left: 60%;
+  transform: translateY(-50%);
 }

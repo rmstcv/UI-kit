@@ -1,10 +1,34 @@
-.checkbox-buttons
- p CHECKBOX BUTTONS
- .checkbox-wrapper
-  +checkbox({
-    item: [
-      {content: "Mожно курить", name: "checkbox buttons"},
-      {content: "Mожно с питомцами", name: "checkbox buttons"},
-      {content: "Mожно пригласить гостей (до 10 человек)", name: "checkbox buttons"}
-    ]
-  })
+.buttons-block
+  .buttons-block__checkbox-wrapper
+    .buttons-block__title
+      p CHECKBOX BUTTONS
+    .buttons-block__checkbox-buttons
+      +checkbox({
+        item: [
+          {content: "Mожно курить", name: "checkbox buttons"},
+          {content: "Mожно с питомцами", name: "checkbox buttons"},
+          {content: "Mожно пригласить гостей (до 10 человек)", name: "checkbox buttons"}
+        ]
+      })
+
+  .buttons-block__radio-wrapper
+    .buttons-block__title
+      p RADIO BUTTONS
+    .buttons-block__radio-buttons
+      +radio-button({
+        item: [
+          {content: "мужчина", name: "radio buttons"},
+          {content: "женщина", name: "radio buttons"},
+        ]
+      })
+
+  .buttons-block__toggle-wrapper
+    .buttons-block__title
+      p TOGGLE
+    .buttons-block__toggle-buttons
+      +toggle-button({
+        item: [
+          {content: "Получать спецпредложения", name: "toggle buttons"},
+          {content: "Получать спецпредложения", name: "toggle buttons"}
+        ]
+      })

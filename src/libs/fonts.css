@@ -12,6 +12,7 @@
   font-family: "Montserrat";
   font-display: swap;
   src: local("Montserrat"),
+  url("../assets/fonts/Montserrat-Regular.ttf") format("truetype"),
   url("../assets/fonts/montserrat-regular-webfont.woff") format("woff"),
   url("../assets/fonts/montserrat-regular-webfont.woff2") format("woff2");
   font-weight: normal;

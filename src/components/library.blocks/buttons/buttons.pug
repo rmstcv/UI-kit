@@ -1,6 +1,21 @@
 mixin checkbox(options)
-  .checkbox
-    each val in options.item
-      .checkbox__item
-        input(class="checkbox__input checkbox__custom" type="checkbox" name=val.name value=val.content)
-        label(class="checkbox__label" for=val.content)= val.content
+  each val in options.item
+    .checkbox-button
+      input(class="checkbox-button__input checkbox-button__custom" type="checkbox" name=val.name value=val.content)
+      label(class="checkbox-button__label" for=val.content)
+        p(class="checkbox-button__content")= val.content
+
+mixin radio-button(options)
+  each val in options.item
+    .radio-button
+      input(class="radio-button__input radio-button__custom" type="radio" name=val.name value=val.content)
+      label(class="radio-button__label" for=val.content)= val.content
+
+mixin toggle-button(options)
+  each val in options.item
+    .toggle-button
+      input(class="toggle-button__input toggle-button__custom" type="checkbox" name=val.name value=val.content)
+      label(class="toggle-button__label" for=val.content)
+        .toggle-button__icon-out
+          .toggle-button__icon-in
+        p(class="toggle-button__content")= val.content

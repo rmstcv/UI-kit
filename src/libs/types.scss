@@ -1,7 +1,10 @@
-$size-h1: 2.4rem;
-$size-h2: 1.9rem;
-$size-h3: 1.2rem;
-$size-body: 1.4rem;
+$size-root: 10px;
+$size-multiplicator: calc($size-root/1rem);
+
+$size-h1: calc(24px / $size-multiplicator);
+$size-h2: calc(19px / $size-multiplicator);
+$size-h3: calc(12px / $size-multiplicator);
+$size-body: calc(14px / $size-multiplicator);
 $type-main-color: $color-dark-100;
 $type-second-color: $color-dark-75;
 

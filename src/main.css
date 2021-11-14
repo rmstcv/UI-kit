@@ -7,10 +7,13 @@
 @import "./components/common.blocks/colors-and-types/colors-and-types.scss";
 @import "./components/common.blocks/form-elements/form-elements.scss";
 * {
+  font-family: 'Montserrat', Arial, sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+html {
   font-size: 10px;
   color: #1f2041;
 }

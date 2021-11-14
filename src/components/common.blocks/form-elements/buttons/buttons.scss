@@ -1,7 +1,27 @@
-.checkbox-buttons {
-  @include type-h2;
-  width: 222px;
-  .checkbox-wrapper {
+.buttons-block {
+  &__title {
+    @include type-h3;
+  }
+  &__checkbox-wrapper {
+    width: 223px;
+  }
+  &__checkbox-buttons {
     margin-top: 16.56px;
+  }
+  &__radio-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+  &__radio-wrapper {
+    margin-top: 38.9px;
+    width: 223px;
+  }
+  &__toggle-buttons {
+    margin-top: 16px;
+  }
+  &__toggle-wrapper {
+    margin-top: 38.9px;
+    width: 100%;
   }
 }
