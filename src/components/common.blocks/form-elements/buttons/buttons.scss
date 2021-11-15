@@ -3,7 +3,7 @@
     @include type-h3;
   }
   &__checkbox-wrapper {
-    width: 223px;
+    max-width: 223px;
   }
   &__checkbox-buttons {
     margin-top: 16.56px;
@@ -15,7 +15,7 @@
   }
   &__radio-wrapper {
     margin-top: 38.9px;
-    width: 223px;
+    max-width: 223px;
   }
   &__toggle-buttons {
     margin-top: 16px;

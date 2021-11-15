@@ -15,9 +15,9 @@
     .buttons-block__title
       p RADIO BUTTONS
     .buttons-block__radio-buttons
-      +radio-button({
+      +radio-buttons({
         item: [
-          {content: "мужчина", name: "radio buttons"},
+          {content: "мужчина", name: "radio buttons", checked: true},
           {content: "женщина", name: "radio buttons"},
         ]
       })
@@ -28,7 +28,7 @@
     .buttons-block__toggle-buttons
       +toggle-button({
         item: [
-          {content: "Получать спецпредложения", name: "toggle buttons"},
+          {content: "Получать спецпредложения", name: "toggle buttons", checked: true},
           {content: "Получать спецпредложения", name: "toggle buttons"}
         ]
       })

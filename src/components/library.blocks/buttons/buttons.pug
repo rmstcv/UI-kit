@@ -1,21 +1,32 @@
 mixin checkbox(options)
   each val in options.item
     .checkbox-button
-      input(class="checkbox-button__input checkbox-button__custom" type="checkbox" name=val.name value=val.content)
+      input(class="checkbox-button__custom" type="checkbox" name=val.name value=val.content)
       label(class="checkbox-button__label" for=val.content)
+        .checkbox-button__icon-out
+          .checkbox-button__icon-in
         p(class="checkbox-button__content")= val.content
 
-mixin radio-button(options)
+mixin radio-buttons(options)
   each val in options.item
     .radio-button
-      input(class="radio-button__input radio-button__custom" type="radio" name=val.name value=val.content)
-      label(class="radio-button__label" for=val.content)= val.content
+      if val.checked
+        input(class="radio-button__custom" type="radio" name=val.name value=val.content checked)
+      else 
+        input(class="radio-button__custom" type="radio" name=val.name value=val.content)       
+      label(class="radio-button__label" for=val.content)
+        .radio-button__icon-out
+          .radio-button__icon-in
+        p(class="radio-button__content")= val.content
 
 mixin toggle-button(options)
   each val in options.item
-    .toggle-button
-      input(class="toggle-button__input toggle-button__custom" type="checkbox" name=val.name value=val.content)
-      label(class="toggle-button__label" for=val.content)
-        .toggle-button__icon-out
-          .toggle-button__icon-in
-        p(class="toggle-button__content")= val.content
+    .radio-button.radio-button_toggle
+      if val.checked
+        input(class="radio-button__custom radio-button__custom_toggle" type="checkbox" name=val.name value=val.content checked)
+      else 
+        input(class="radio-button__custom radio-button__custom_toggle" type="checkbox" name=val.name value=val.content)
+      label(class="radio-button__label radio-button__label_toggle" for=val.content)
+        .radio-button__icon-out.radio-button__icon-out_toggle
+          .radio-button__icon-in.radio-button__icon-in_toggle
+        p(class="radio-button__content")= val.content

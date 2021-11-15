@@ -6,43 +6,41 @@
   &__custom {
     position: absolute;
     opacity: 0;
-    width: 23px;
-    height: 23px;
-    &:checked + label::before {
-      content: "";
-      width: 20px;
+    width: 20px;
+    height: 20px;
+    &:checked + label .checkbox-button__icon-out {
+      position: relative;
+      min-width: 20px;
       height: 20px;
       border: 1px solid $color-second;
       border-radius: 4px;
       margin-right: 1rem;
     }
-    &:checked + label::after {
-      content: "";
+    &:checked + label .checkbox-button__icon-in {
       position: absolute;
-      width: 6px;
-      height: 4px;
-      border-left: 3px solid transparent;
-      border-bottom: 3px solid transparent;
+      width: 8px;
+      height: 6px;
+      border-left: 2px solid transparent;
+      border-bottom: 2px solid transparent;
       border-image: linear-gradient(180deg, $color-second 0%, #8ba4f9 100%);
       border-image-slice: 1;
-      top: 2px;
-      left: 10px;
-      transform: rotate(-45deg) translate(-50%);
+      top: 23%;
+      left: 57%;
+      transform: rotate(-45deg) translate(-50%, -50%);
     }
   }
   &__label {
     z-index: -1;
     position: relative;
     display: flex;
-    &::before {
-      content: "";
-      width: 20px;
-      height: 20px;
-      flex-shrink: 0;
-      border: 1px solid rgba(31, 32, 65, 0.25);
-      border-radius: 4px;
-      margin-right: 1rem;
-    }
+  }
+  .checkbox-button__icon-out {
+    position: relative;
+    min-width: 20px;
+    height: 20px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 4px;
+    margin-right: 1rem;
   }
   &__content {
     font-weight: normal;
@@ -53,152 +51,85 @@
 }
 
 .radio-button {
+  &_toggle {
+    margin-top: 12px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
   &__custom {
     position: absolute;
     opacity: 0;
-    width: 23px;
-    height: 23px;
-    &:checked + label::before {
-      content: "";
-      width: 20px;
-      height: 20px;
-      border: 1px solid $color-second;
-      border-radius: 10px;
-      margin-right: 1rem;
+    width: 21px;
+    height: 21px;
+    border-radius: 10px;
+    &_toggle {
+      min-width: 40px;
     }
-    &:checked + label::after {
-      content: "";
+    &:checked + label .radio-button {
+      &__icon-out {
+        position: relative;
+        width: 21px;
+        height: 21px;
+        border: 1px solid $color-second;
+        border-radius: 10px;
+        margin-right: 1rem;
+        &_toggle {
+          min-width: 40px;
+        }
+      }
+      &__icon-in {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-radius: 10px;
+        background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        &_toggle {
+          border-radius: 10px;
+          left: 60%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+  &__label {
+    z-index: -1;
+    position: relative;
+    display: flex;
+    &_toggle {
+      align-items: center;
+    }
+  }
+  &__icon-out {
+    width: 21px;
+    height: 21px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 10px;
+    margin-right: 1rem;
+    &_toggle {
+      position: relative;
+      min-width: 40px;
+    }
+  }
+  &__icon-in {
+    &_toggle {
       position: absolute;
       width: 12px;
       height: 12px;
+      flex-shrink: 0;
+      background: rgba(31, 32, 65, 0.25);
       border-radius: 10px;
-      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
       top: 50%;
-      transform: translate(40%, -50%);
+      left: 10%;
+      transform: translateY(-50%);
     }
-  }
-  &__label {
-    z-index: -1;
-    position: relative;
-    display: flex;
-    font-weight: normal;
-    font-size: $size-body;
-    color: $color-dark-50;
-    &::before {
-      content: "";
-      width: 20px;
-      height: 20px;
-      border: 1px solid rgba(31, 32, 65, 0.25);
-      border-radius: 10px;
-      margin-right: 1rem;
-    }
-  }
-}
-
-.toggle-button {
-  margin-top: 12px;
-  display: flex;
-  align-items: center;
-  &__custom {
-    position: absolute;
-    opacity: 0;
-    width: 40px;
-    height: 20px;
-    border-radius: 10px;
-    // &:checked + label::before {
-    //   content: "";
-    //   width: 40px;
-    //   height: 20px;
-    //   flex-shrink: 0;
-    //   border: 1px solid #bc9cff;
-    //   border-radius: 10px;
-    //   margin-right: 1rem;
-    // }
-    // &:checked + label::after {
-    //   content: "";
-    //   width: 12px;
-    //   height: 12px;
-    //   flex-shrink: 0;
-    //   background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-    //   border-radius: 10px;
-    //   margin-right: 1rem;
-    //   left: 10%;
-    // }
-  }
-  &__label {
-    z-index: -1;
-    position: relative;
-    display: flex;
-    align-items: center;
-    // &::before {
-    //   content: "";
-    //   width: 40px;
-    //   height: 20px;
-    //   flex-shrink: 0;
-    //   border: 1px solid rgba(31, 32, 65, 0.25);
-    //   border-radius: 10px;
-    //   margin-right: 1rem;
-    // }
-    // &::after {
-    //   position: absolute;
-    //   content: "";
-    //   width: 12px;
-    //   height: 12px;
-    //   flex-shrink: 0;
-    //   background: rgba(31, 32, 65, 0.25);
-    //   border-radius: 10px;
-    //   margin-right: 1rem;
-    //   left: 4%;
-    // }
   }
   &__content {
     font-weight: normal;
     font-size: $size-body;
     color: $color-dark-50;
-    margin-top: calc(20px / 2 - $size-body/2);
   }
-}
-
-.toggle-button {
-  &__icon-out {
-    position: relative;
-    width: 40px;
-    height: 20px;
-    flex-shrink: 0;
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    border-radius: 10px;
-    margin-right: 1rem;
-  }
-  &__icon-in {
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    flex-shrink: 0;
-    background: rgba(31, 32, 65, 0.25);
-    border-radius: 10px;
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
-  }
-}
-
-.toggle-button__custom:checked + label .toggle-button__icon-out {
-  width: 40px;
-  height: 20px;
-  flex-shrink: 0;
-  border: 1px solid #bc9cff;
-  border-radius: 10px;
-  margin-right: 1rem;
-}
-
-.toggle-button__custom:checked + label .toggle-button__icon-in {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  flex-shrink: 0;
-  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-  border-radius: 10px;
-  top: 50%;
-  left: 60%;
-  transform: translateY(-50%);
 }
