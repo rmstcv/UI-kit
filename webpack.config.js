@@ -18,6 +18,11 @@ const config = {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist')
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
   devServer: {
     port: 4200,
     static: path.join(__dirname, 'src'),

@@ -24,4 +24,42 @@
     margin-top: 38.9px;
     width: 100%;
   }
+  &__liked-wrapper {
+    margin-top: 38.9px;
+  }
+  &__like-buttons {
+    margin-top: 16px;
+    display: flex;
+  }
+  .like-button-colored {
+    margin-left: 10px;
+    .like-button__heart_unactive {
+      opacity: 1;
+    }
+  }
 }
+
+// .like-button-colored {
+//   .like-button__heart_uncolored {
+//     display: none;
+//   }
+//   .like-button__heart_colored {
+//     display: block;
+//   }
+//   // .like-button__heart_unactive {
+//   //   display: block;
+//   // }
+// }
+
+// .like-button-colored
+//   .like-button
+//   .like-button__content
+//   .like-button__heart_uncolored {
+//   opacity: 0;
+// }
+// .like-button-colored
+//   .like-button
+//   .like-button__content
+//   .like-button__heart_colored {
+//   opacity: 1;
+// }

@@ -51,6 +51,7 @@
 }
 
 .radio-button {
+  position: relative;
   &_toggle {
     margin-top: 12px;
     &:first-child {
@@ -63,6 +64,8 @@
     width: 21px;
     height: 21px;
     border-radius: 10px;
+    top: 50%;
+    transform: translateY(-50%);
     &_toggle {
       min-width: 40px;
     }
@@ -131,5 +134,46 @@
     font-weight: normal;
     font-size: $size-body;
     color: $color-dark-50;
+  }
+}
+
+.like-button {
+  width: 39.72px;
+  height: 20px;
+  border: 1px solid $color-dark-25;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  &__content {
+    width: 50%;
+    height: 100%;
+    position: relative;
+  }
+  &__heart {
+    // display: block;
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    // &_uncolored {
+    //   opacity: 1;
+    // }
+    // &_colored {
+    //   opacity: 0;
+    // }
+    // &_active {
+    //   display: block;
+    // }
+    &_unactive {
+      opacity: 0;
+    }
+  }
+  &__number {
+    font-size: 10px;
+    line-height: 12px;
+    color: $color-dark-25;
   }
 }

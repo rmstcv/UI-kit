@@ -1,3 +1,4 @@
+include ../../../library.blocks/buttons/buttons.pug
 .buttons-block
   .buttons-block__checkbox-wrapper
     .buttons-block__title
@@ -32,3 +33,14 @@
           {content: "Получать спецпредложения", name: "toggle buttons"}
         ]
       })
+
+  .buttons-block__liked-wrapper
+    .buttons-block__title
+      p LIKE BUTTON
+    .buttons-block__like-buttons
+      +like-button()
+      .like-button-colored
+        +like-button()
+
+script
+  include ../../../library.blocks/buttons/like-button.js
