@@ -49,3 +49,11 @@ mixin like-button()
           </defs>
         </svg>
     .like-button__number
+
+mixin rate-button(options)
+  .rate-buttons
+    - var n = 0;
+        while n < options.stars
+          .rate-buttons__item.rate-buttons__item_uncolored
+          - n++
+  

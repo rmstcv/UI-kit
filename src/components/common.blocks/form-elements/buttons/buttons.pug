@@ -42,5 +42,17 @@ include ../../../library.blocks/buttons/buttons.pug
       .like-button-colored
         +like-button()
 
+  .buttons-block__rate-wrapper
+    .buttons-block__title
+      p RATE BUTTON
+        .buttons-block__stars-blocks
+          .buttons-block__stars
+            +rate-button({
+              stars: 5
+            })
+          .buttons-block__stars.buttons-block__stars_all-stars
+            +rate-button({
+              stars: 5
+            })
 script
-  include ../../../library.blocks/buttons/like-button.js
+  include ../../../library.blocks/buttons/buttons.js

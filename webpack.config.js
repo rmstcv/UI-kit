@@ -24,7 +24,7 @@ const config = {
     }
   },
   devServer: {
-    port: 4200,
+    port: 4000,
     static: path.join(__dirname, 'src'),
     // hot: true,
     // inline: true

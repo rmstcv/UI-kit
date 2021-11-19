@@ -37,29 +37,25 @@
       opacity: 1;
     }
   }
+  &__rate-wrapper {
+    margin-top: 40px;
+  }
+  &__stars-blocks {
+    display: flex;
+    margin-top: 16px;
+  }
+  &__stars {
+    &_all-stars {
+      margin-left: 20px;
+      .rate-buttons {
+        &__item {
+          &_uncolored {
+            width: 20px;
+            height: 19px;
+            background-image: url("components/library.blocks/buttons/star.svg");
+          }
+        }
+      }
+    }
+  }
 }
-
-// .like-button-colored {
-//   .like-button__heart_uncolored {
-//     display: none;
-//   }
-//   .like-button__heart_colored {
-//     display: block;
-//   }
-//   // .like-button__heart_unactive {
-//   //   display: block;
-//   // }
-// }
-
-// .like-button-colored
-//   .like-button
-//   .like-button__content
-//   .like-button__heart_uncolored {
-//   opacity: 0;
-// }
-// .like-button-colored
-//   .like-button
-//   .like-button__content
-//   .like-button__heart_colored {
-//   opacity: 1;
-// }

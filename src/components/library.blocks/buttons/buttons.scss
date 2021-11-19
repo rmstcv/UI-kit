@@ -177,3 +177,25 @@
     color: $color-dark-25;
   }
 }
+
+.rate-buttons {
+  display: flex;
+
+  &__item {
+    position: relative;
+    &_hide {
+      display: none;
+    }
+    &_uncolored {
+      width: 20px;
+      height: 19px;
+      background-image: url("components/library.blocks/buttons/star_border.svg");
+    }
+
+    &_colored {
+      width: 20px;
+      height: 19px;
+      background-image: url("components/library.blocks/buttons/star.svg");
+    }
+  }
+}
