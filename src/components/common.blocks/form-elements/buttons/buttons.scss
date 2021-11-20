@@ -1,4 +1,6 @@
+@import "../../../library.blocks/nouislider/nouislider.scss";
 .buttons-block {
+  display: flex;
   &__title {
     @include type-h3;
   }
@@ -45,17 +47,41 @@
     margin-top: 16px;
   }
   &__stars {
+    .rate-buttons {
+      &__item {
+        &_uncolored {
+          background-image: url("components/library.blocks/buttons/star.svg");
+          &:last-child {
+            background-image: url("components/library.blocks/buttons/star_border.svg");
+          }
+        }
+      }
+    }
     &_all-stars {
       margin-left: 20px;
       .rate-buttons {
         &__item {
           &_uncolored {
-            width: 20px;
-            height: 19px;
             background-image: url("components/library.blocks/buttons/star.svg");
+            &:last-child {
+              background-image: url("components/library.blocks/buttons/star.svg");
+            }
           }
         }
       }
     }
+  }
+  &__slider-wrapper {
+    .buttons-block__title {
+      display: flex;
+      justify-content: space-between;
+    }
+    .buttons-block__title > p:last-child {
+      font-weight: normal;
+      color: $color-dark-50;
+    }
+  }
+  &__slider {
+    margin-top: 23px;
   }
 }

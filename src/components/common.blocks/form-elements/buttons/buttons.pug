@@ -1,58 +1,65 @@
 include ../../../library.blocks/buttons/buttons.pug
 .buttons-block
-  .buttons-block__checkbox-wrapper
-    .buttons-block__title
-      p CHECKBOX BUTTONS
-    .buttons-block__checkbox-buttons
-      +checkbox({
-        item: [
-          {content: "Mожно курить", name: "checkbox buttons"},
-          {content: "Mожно с питомцами", name: "checkbox buttons"},
-          {content: "Mожно пригласить гостей (до 10 человек)", name: "checkbox buttons"}
-        ]
-      })
+  .buttons-block__wrapper
+    .buttons-block__checkbox-wrapper
+      .buttons-block__title
+        p CHECKBOX BUTTONS
+      .buttons-block__checkbox-buttons
+        +checkbox({
+          item: [
+            {content: "Mожно курить", name: "checkbox buttons"},
+            {content: "Mожно с питомцами", name: "checkbox buttons"},
+            {content: "Mожно пригласить гостей (до 10 человек)", name: "checkbox buttons"}
+          ]
+        })
 
-  .buttons-block__radio-wrapper
-    .buttons-block__title
-      p RADIO BUTTONS
-    .buttons-block__radio-buttons
-      +radio-buttons({
-        item: [
-          {content: "мужчина", name: "radio buttons", checked: true},
-          {content: "женщина", name: "radio buttons"},
-        ]
-      })
+    .buttons-block__radio-wrapper
+      .buttons-block__title
+        p RADIO BUTTONS
+      .buttons-block__radio-buttons
+        +radio-buttons({
+          item: [
+            {content: "мужчина", name: "radio buttons", checked: true},
+            {content: "женщина", name: "radio buttons"},
+          ]
+        })
 
-  .buttons-block__toggle-wrapper
-    .buttons-block__title
-      p TOGGLE
-    .buttons-block__toggle-buttons
-      +toggle-button({
-        item: [
-          {content: "Получать спецпредложения", name: "toggle buttons", checked: true},
-          {content: "Получать спецпредложения", name: "toggle buttons"}
-        ]
-      })
+    .buttons-block__toggle-wrapper
+      .buttons-block__title
+        p TOGGLE
+      .buttons-block__toggle-buttons
+        +toggle-button({
+          item: [
+            {content: "Получать спецпредложения", name: "toggle buttons", checked: true},
+            {content: "Получать спецпредложения", name: "toggle buttons"}
+          ]
+        })
 
-  .buttons-block__liked-wrapper
-    .buttons-block__title
-      p LIKE BUTTON
-    .buttons-block__like-buttons
-      +like-button()
-      .like-button-colored
+    .buttons-block__liked-wrapper
+      .buttons-block__title
+        p LIKE BUTTON
+      .buttons-block__like-buttons
         +like-button()
+        .like-button-colored
+          +like-button()
 
-  .buttons-block__rate-wrapper
-    .buttons-block__title
-      p RATE BUTTON
-        .buttons-block__stars-blocks
-          .buttons-block__stars
-            +rate-button({
-              stars: 5
-            })
-          .buttons-block__stars.buttons-block__stars_all-stars
-            +rate-button({
-              stars: 5
-            })
-script
-  include ../../../library.blocks/buttons/buttons.js
+    .buttons-block__rate-wrapper
+      .buttons-block__title
+        p RATE BUTTON
+          .buttons-block__stars-blocks
+            .buttons-block__stars
+              +rate-button({
+                stars: 5
+              })
+            .buttons-block__stars.buttons-block__stars_all-stars
+              +rate-button({
+                stars: 5
+              })
+
+  .buttons-block__wrapper  
+    .buttons-block__slider-wrapper
+      .buttons-block__title
+        p RANGE SLIDER
+        p 5 000₽ - 10 000₽
+      .buttons-block__slider
+      include ../../../library.blocks/nouislider/nouislider.pug

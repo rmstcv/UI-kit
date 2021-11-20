@@ -5,11 +5,15 @@
   "main": "index.js",
   "scripts": {
     "build": "npx webpack --mode production",
-    "dev": "npx webpack-dev-server --mode development --open"
+    "dev": "npx webpack-dev-server --mode development --open "
   },
+  "browserslist": "> 0.25%, not dead",
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "babel-loader": "^8.2.3",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.5.0",
     "file-loader": "^6.2.0",
@@ -25,5 +29,7 @@
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.4.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "nouislider": "^15.5.0"
+  }
 }

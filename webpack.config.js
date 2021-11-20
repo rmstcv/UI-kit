@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -18,13 +18,16 @@ const config = {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist')
   },
+  // resolve: {
+  //   extensions: ['.js']
+  // },
   optimization: {
     splitChunks: {
       chunks: 'all'
     }
   },
   devServer: {
-    port: 4000,
+    port: 4200,
     static: path.join(__dirname, 'src'),
     // hot: true,
     // inline: true
@@ -42,6 +45,16 @@ const config = {
   ],
   module: {
     rules: [
+       {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      },
       
       // {
       //   test: /\.(s[ac]ss|css)$/,
