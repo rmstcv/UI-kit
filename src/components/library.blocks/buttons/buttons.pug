@@ -56,4 +56,21 @@ mixin rate-button(options)
         while n < options.stars
           .rate-buttons__item.rate-buttons__item_uncolored
           - n++
+
+mixin simple-button(options)
+  - var type = options.type
+  - var text = options.text
+  case type 
+    when 'colored'
+      button(class='simple-button simple-button_colored')= text  
+    when 'uncolored'
+      button(class='simple-button simple-button_uncolored')= text
+    when 'unborded'
+      button(class='simple-button simple-button_unborded')= text
+    when 'long'
+      button(class='simple-button simple-button_long')= text
+    default 
+      button(class='simple-button simple-button_colored')= text  
+
+
   

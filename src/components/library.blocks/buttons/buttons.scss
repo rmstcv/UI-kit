@@ -150,23 +150,12 @@
     position: relative;
   }
   &__heart {
-    // display: block;
     svg {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
     }
-
-    // &_uncolored {
-    //   opacity: 1;
-    // }
-    // &_colored {
-    //   opacity: 0;
-    // }
-    // &_active {
-    //   display: block;
-    // }
     &_unactive {
       opacity: 0;
     }
@@ -196,6 +185,64 @@
       width: 20px;
       height: 19px;
       background-image: url("components/library.blocks/buttons/star.svg");
+    }
+  }
+}
+
+.simple-button {
+  width: 99px;
+  height: 44px;
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  border-radius: 22px;
+  border: none;
+  @include type-h3;
+  color: #fff;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.5;
+  }
+  &_uncolored {
+    color: $color-second;
+    background: linear-gradient(#fff, #fff) padding-box,
+      linear-gradient(to right, #bc9cff 0%, #8ba4f9) border-box;
+    padding: 10px;
+    border: 2px solid transparent;
+  }
+  &_unborded {
+    background: none;
+    border: none;
+    color: $color-second;
+    &:hover {
+      opacity: 1;
+      color: $color-dark-50;
+    }
+  }
+  &_long {
+    width: 320px;
+    position: relative;
+    &:hover {
+      opacity: 1;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-bottom: 2px solid #fff;
+      border-left: 2px solid #fff;
+      transform: rotate(-135deg) translate(-50%);
+      top: 12.8px;
+      right: 24px;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: #fff;
+      width: 15px;
+      height: 2px;
+      top: 50%;
+      right: 12px;
+      transform: translate(-50%);
     }
   }
 }

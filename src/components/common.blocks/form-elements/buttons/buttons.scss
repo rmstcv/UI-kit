@@ -1,6 +1,9 @@
 @import "../../../library.blocks/nouislider/nouislider.scss";
 .buttons-block {
   display: flex;
+  &__wrapper:last-child {
+    margin-left: 132px;
+  }
   &__title {
     @include type-h3;
   }
@@ -49,6 +52,7 @@
   &__stars {
     .rate-buttons {
       &__item {
+        margin-right: 4px;
         &_uncolored {
           background-image: url("components/library.blocks/buttons/star.svg");
           &:last-child {
@@ -83,5 +87,34 @@
   }
   &__slider {
     margin-top: 23px;
+  }
+  &__simple-buttons-wrapper {
+    margin-top: 40px;
+  }
+  &__simple-buttons {
+    &_colored {
+      margin-top: 16px;
+      .simple-button:last-child {
+        margin-left: 19px;
+        opacity: 0.5;
+      }
+    }
+    &_uncolored {
+      margin-top: 30px;
+      .simple-button:last-child {
+        margin-left: 19px;
+        opacity: 0.5;
+      }
+    }
+    &_unborded {
+      margin-top: 31px;
+      .simple-button:last-child {
+        margin-left: 19px;
+        color: $color-dark-50;
+      }
+    }
+    &_long {
+      margin-top: 30px;
+    }
   }
 }

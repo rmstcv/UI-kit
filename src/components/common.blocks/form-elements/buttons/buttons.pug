@@ -63,3 +63,39 @@ include ../../../library.blocks/buttons/buttons.pug
         p 5 000₽ - 10 000₽
       .buttons-block__slider
       include ../../../library.blocks/nouislider/nouislider.pug
+
+    .buttons-block__simple-buttons-wrapper
+      .buttons-block__title
+        p BUTTONS 
+        .buttons-block__simple-buttons.buttons-block__simple-buttons_colored
+          +simple-button({
+            type: 'colored',
+            text: 'click me'
+          })
+          +simple-button({
+            type: 'colored',
+            text: 'click me'
+          })
+      .buttons-block__simple-buttons.buttons-block__simple-buttons_uncolored
+        +simple-button({
+          type: 'uncolored',
+          text: 'click me'
+        })
+        +simple-button({
+          type: 'uncolored',
+          text: 'click me'
+        })
+      .buttons-block__simple-buttons.buttons-block__simple-buttons_unborded
+        +simple-button({
+          type: 'unborded',
+          text: 'click me'
+        })
+        +simple-button({
+          type: 'unborded',
+          text: 'click me'
+        })
+      .buttons-block__simple-buttons.buttons-block__simple-buttons_long
+        +simple-button({
+            type: 'long',
+            text: 'перейти к оплате'
+          })
