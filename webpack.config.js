@@ -33,6 +33,9 @@ const config = {
     // inline: true
     // dry: true,
   },
+  // externals: {
+  //   jquery: 'jQuery'
+  // },
   plugins: [
     new HtmlWebpackPlugin({
       template: './index.pug',
@@ -55,7 +58,16 @@ const config = {
           }
         }
       },
-      
+      //  {
+      //           test: /jquery.+\.js$/,
+      //           use: [{
+      //               loader: 'expose-loader',
+      //               options: 'jQuery'
+      //           },{
+      //               loader: 'expose-loader',
+      //               options: '$'
+      //           }]
+      //       },
       // {
       //   test: /\.(s[ac]ss|css)$/,
       //   use: [
@@ -118,6 +130,17 @@ const config = {
          filename: 'static/images/[hash][ext][query]'
        }
       },
+      {
+        test: require.resolve('jquery'),
+      use: [
+        {
+          loader: "expose-loader",
+          options: {
+            exposes: ["$", "jQuery"]
+          }
+        }
+      ]
+      }
       // {
       //   test: /\.svg$/,
       //   exclude: path.resolve(__dirname, './src/webfonts'),

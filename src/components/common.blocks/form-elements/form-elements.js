@@ -1,1 +1,1 @@
-import buttons from "./buttons/buttons.js";
+import "./buttons/buttons.js";

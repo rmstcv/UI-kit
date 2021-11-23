@@ -1,20 +1,5 @@
 @import "nouislider/dist/nouislider.css";
 
-// .nouislider {
-//   height: 330px;
-//   background-color: $color-dark-25;
-//   margin-top: 80px;
-//   &__header {
-//     font-weight: bold;
-//     font-size: 40px;
-//     line-height: 3.1rem;
-//     padding-top: 80px;
-//   }
-//   &__slider {
-//     margin-top: 50px;
-//   }
-// }
-
 .noUi-connect {
   background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
   transform: translate(33.3333%, 0px) scale(0.276515, 1);
@@ -49,17 +34,6 @@
   width: 266px;
 }
 
-// .noUi-horizontal .noUi-tooltip {
-//   width: 93px;
-//   height: 34px;
-//   margin-top: 32px;
-//   top: 0;
-//   font-size: 18px;
-// }
-
-// .noUi-horizontal {
-//   height: 18px;
-// }
 .noUi-horizontal .noUi-handle {
   right: -6px;
   top: -5px;

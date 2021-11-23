@@ -1,1 +1,1 @@
-import formElements from './components/common.blocks/form-elements/form-elements.js';
+import './components/common.blocks/form-elements/form-elements.js';
