@@ -1,7 +1,5 @@
 import 'jquery';
-// import 'paginationjs';
 import './jquery.pajinatify.js';
-import './jquery.pajinatify.css';
 
 $(function(){
 
@@ -9,4 +7,8 @@ $(function(){
 
 });
 
-console.log($('#data-container'));
+$('.pagination').pajinatify({
+  onChange: function (currentPage) {
+    console.log(currentPage);
+  },
+});

@@ -1,3 +1,5 @@
-div(class="pagination" 
-    data-total-count="400" 
-    data-take="10")
+mixin pagination(options)
+
+  div(class="pagination" 
+      data-total-count=options.dataTotalCount
+      data-take=options.dataTake)

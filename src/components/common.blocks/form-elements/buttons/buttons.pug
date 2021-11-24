@@ -99,5 +99,15 @@ include ../../../library.blocks/buttons/buttons.pug
             type: 'long',
             text: 'перейти к оплате'
           })
-
-    include ../../../library.blocks/pagination/pagination.pug
+ 
+    .buttons-block__pagination-wrapper
+      .buttons-block__title
+        p PAGINATION
+      .buttons-block__pagination
+      include ../../../library.blocks/pagination/pagination.pug
+      +pagination({
+          dataTotalCount: 150,
+          dataTake: 10
+        })
+      .buttons-block__pagination-descr
+        p 1 – 12 из 100+ вариантов аренды

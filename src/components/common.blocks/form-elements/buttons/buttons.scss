@@ -1,4 +1,6 @@
 @import "../../../library.blocks/nouislider/nouislider.scss";
+// @import "../../../library.blocks/pagination/jquery.pajinatify.scss";
+@import "../../../library.blocks/pagination/pagination.scss";
 .buttons-block {
   display: flex;
   &__wrapper:last-child {
@@ -116,5 +118,16 @@
     &_long {
       margin-top: 30px;
     }
+  }
+  &__pagination-wrapper {
+    margin-top: 40px;
+  }
+  &__pagination {
+    margin-top: 16px;
+  }
+  &__pagination-descr {
+    @include type-body;
+    margin-top: 10px;
+    margin-left: 6px;
   }
 }
