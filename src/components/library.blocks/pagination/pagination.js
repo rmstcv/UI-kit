@@ -1,4 +1,4 @@
-import 'jquery';
+// import 'jquery';
 import './jquery.pajinatify.js';
 
 $(function(){

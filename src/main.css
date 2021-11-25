@@ -3,9 +3,13 @@
 @import "./libs/types.scss";
 @import "./components/library.blocks/fields/fields.scss";
 @import "./components/library.blocks/buttons/buttons.scss";
+@import "./components/library.blocks/dropdown/dropdown.scss";
+@import "./components/library.blocks/nouislider/nouislider.scss";
+@import "./components/library.blocks/pagination/pagination.scss";
 @import "./components/common.blocks/logo/logo.scss";
 @import "./components/common.blocks/colors-and-types/colors-and-types.scss";
 @import "./components/common.blocks/form-elements/form-elements.scss";
+
 * {
   font-family: 'Montserrat', Arial, sans-serif;
   box-sizing: border-box;

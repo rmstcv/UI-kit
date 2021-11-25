@@ -1,0 +1,25 @@
+mixin dropdown(options)
+  - 
+    var fieldLength = ""
+    fieldLength += options.isSmall ? "dropdown dropdown_small" : options.isMedium ? "dropdown dropdown_medium" : "dropdown"
+    var fieldClassName = ""
+    fieldClassName += options.dropdown ? "dropdown_dropdown" : ""
+
+  div(class = fieldLength)
+    .dropdown__text-wrapper
+      p(class="dropdown__name")= options.fieldName
+
+    if options.dropdown   
+      .dropdown__check-wrapper
+        .dropdown__check-mark
+
+    div(class=`dropdown__field ${fieldClassName}`)
+    .dropdown__content-wrapper
+      .dropdown__content
+        each val in options.items
+          .dropdown__item-wrapper
+            div(class="dropdown__item-name")= val
+            div(class="dropdown__item-counter")
+              div(class="dropdown__counter dropdown__counter_prev") -
+              div(class="dropdown__counter-value") 0
+              div(class="dropdown__counter dropdown__counter_next") +

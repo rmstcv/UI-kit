@@ -1,0 +1,96 @@
+.dropdown {
+  position: relative;
+  width: 320px;
+  &_small {
+    width: 150px;
+  }
+  &_medium {
+    width: 266px;
+  }
+  &__name {
+    @include type-h3;
+  }
+  &__date {
+    @include type-body;
+    line-height: 1.8rem;
+  }
+  &__field {
+    width: 100%;
+    height: 44px;
+    border: 1px solid $color-dark-25;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom: none;
+    padding-left: 15px;
+    margin-top: 5px;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: $color-dark-75;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      border-color: $color-dark-50;
+    }
+    &_focus {
+      border-color: $color-dark-50;
+    }
+  }
+  &__content-wrapper {
+    width: 266px;
+    height: 119px;
+    padding: 0 7px 7px 15px;
+    border: 1px solid $color-dark-25;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  &__check-wrapper {
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    margin-top: 5px;
+    right: 0;
+    cursor: pointer;
+  }
+  &__check-mark {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    border-left: 2px solid $color-dark-50;
+    border-bottom: 2px solid $color-dark-50;
+    bottom: 50%;
+    left: 50%;
+    transform: rotate(-45deg) translate(-50%);
+  }
+  &__item-name {
+    @include type-h3;
+  }
+  &__item-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 7px;
+  }
+  &__item-counter {
+    display: flex;
+    align-items: center;
+    width: 92px;
+    justify-content: space-between;
+  }
+  &__counter {
+    width: 30px;
+    height: 30px;
+    border: 1px solid $color-dark-50;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    line-height: 21px;
+    color: $color-dark-50;
+    cursor: pointer;
+  }
+  &__counter-value {
+    @include type-h3;
+  }
+}
