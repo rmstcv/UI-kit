@@ -2,6 +2,7 @@
   p(class="field-wrapper__text") DEFAULT
   +dropdown({
     fieldName: "DROPDOWN",
+    dropdownName: "facilities",
     items: ["спальни", "кровати", "ванные комнаты"],
     isMedium: true
   })
@@ -10,6 +11,10 @@
   p(class="field-wrapper__text") DEFAULT
   +dropdown({
     fieldName: "DROPDOWN",
-    items: ["спальни", "кровати", "ванные комнаты"],
-    isMedium: true
+    dropdownName: "guests",
+    items: ["взрослые", "дети", "младенцы"],
+    isMedium: true,
+    isCalc: true,
+    placeholder: "Сколько гостей",
+    confirmPanel: true
   })

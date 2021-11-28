@@ -55,6 +55,8 @@
     cursor: pointer;
   }
   &__check-mark {
+    border: none;
+    background: none;
     position: absolute;
     width: 9px;
     height: 9px;
@@ -81,6 +83,7 @@
     justify-content: space-between;
   }
   &__counter {
+    background: none;
     width: 30px;
     height: 30px;
     border: 1px solid $color-dark-50;
@@ -100,5 +103,18 @@
   }
   &__counter-value {
     @include type-h3;
+  }
+  &__confirm-panel {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 29px;
+    margin-bottom: 6px;
+  }
+  &__confirm-button {
+    border: none;
+    background: none;
+    @include type-h3;
+    color: $color-second;
+    cursor: pointer;
   }
 }
