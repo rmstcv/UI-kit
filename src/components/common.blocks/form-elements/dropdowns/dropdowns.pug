@@ -1,20 +1,42 @@
-.field-wrapper
-  p(class="field-wrapper__text") DEFAULT
-  +dropdown({
-    fieldName: "DROPDOWN",
-    dropdownName: "facilities",
-    items: ["спальни", "кровати", "ванные комнаты"],
-    isMedium: true
-  })
+.dropdowns-block
+  .dropdowns-block__facilities 
+    .dropdown-wrapper
+      p(class="dropdown-wrapper__text") DEFAULT
+      +dropdown({
+        fieldName: "DROPDOWN",
+        dropdownName: "facilities",
+        items: ["спальни", "кровати", "ванные комнаты"],
+        placeholder: [{"name":"0","value":"0"}],
+        isMedium: true
+      })
 
-  .field-wrapper
-  p(class="field-wrapper__text") DEFAULT
-  +dropdown({
-    fieldName: "DROPDOWN",
-    dropdownName: "guests",
-    items: ["взрослые", "дети", "младенцы"],
-    isMedium: true,
-    isCalc: true,
-    placeholder: "Сколько гостей",
-    confirmPanel: true
-  })
+    .dropdown-wrapper
+      p(class="dropdown-wrapper__text") EXPANDED
+      +dropdown({
+        fieldName: "DROPDOWN",
+        dropdownName: "facilities",
+        items: ["спальни", "кровати", "ванные комнаты"],
+        placeholder: [{"name":"0","value":"0"}],
+        isMedium: true
+      })
+
+  .dropdowns-block__guests
+    .dropdown-wrapper
+      +dropdown({
+        fieldName: "DROPDOWN",
+        dropdownName: "guests",
+        items: ["взрослые", "дети", "младенцы"],
+        isCalc: true,
+        placeholder: "Сколько гостей",
+        confirmPanel: true
+      })
+
+    .dropdown-wrapper
+      +dropdown({
+        fieldName: "DROPDOWN",
+        dropdownName: "guests",
+        items: ["взрослые", "дети", "младенцы"],
+        isCalc: true,
+        placeholder: "Сколько гостей",
+        confirmPanel: true
+      })

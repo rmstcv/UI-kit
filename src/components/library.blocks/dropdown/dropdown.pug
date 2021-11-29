@@ -9,10 +9,10 @@ mixin dropdown(options)
         content = `0 ${options.items[0]}, 0 ${options.items[1]}...`
       if (options.isCalc)
         content = options.placeholder
-  div(class = fieldLength data-dropdown-content= [{"name":"","value":""}])
+  div(class = fieldLength  data-dropdown-name=options.dropdownName data-dropdown-content=[{"name":"0","value":"0"}])
     .dropdown__text-wrapper
       p(class="dropdown__name")= options.fieldName
-    div(class="dropdown__field" data-dropdown-name=options.dropdownName)
+    div(class="dropdown__field")
       .dropdown__preview-wrapper= content
       .dropdown__check-wrapper
         button(class = "dropdown__check-mark")
@@ -27,5 +27,5 @@ mixin dropdown(options)
               button(class="dropdown__counter dropdown__counter_next") +
       if (options.confirmPanel)
        .dropdown__confirm-panel
-        button(class="dropdown__confirm-button dropdown__confirm-button_clear") Очистить
+        button(class="dropdown__confirm-button dropdown__confirm-button_clear dropdown__confirm-button_hide") Очистить
         button(class="dropdown__confirm-button dropdown__confirm-button_admit") Принять

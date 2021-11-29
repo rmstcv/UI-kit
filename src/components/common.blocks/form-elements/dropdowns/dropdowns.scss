@@ -1,0 +1,25 @@
+.dropdowns-block {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  &__facilities {
+    .dropdown-wrapper:last-child {
+      margin-top: 20px;
+    }
+  }
+  &__guests {
+    .dropdown-wrapper:last-child {
+      margin-left: 72px;
+    }
+  }
+  &__guests {
+    display: flex;
+  }
+  .dropdown-wrapper {
+    position: relative;
+    &__text {
+      position: absolute;
+      right: 0;
+    }
+  }
+}

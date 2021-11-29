@@ -116,5 +116,11 @@
     @include type-h3;
     color: $color-second;
     cursor: pointer;
+    &_admit {
+      margin-left: auto;
+    }
+    &_hide {
+      display: none;
+    }
   }
 }
