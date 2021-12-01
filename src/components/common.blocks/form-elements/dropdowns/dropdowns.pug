@@ -5,8 +5,11 @@
       +dropdown({
         fieldName: "DROPDOWN",
         dropdownName: "facilities",
-        items: ["спальни", "кровати", "ванные комнаты"],
-        placeholder: [{"name":"0","value":"0"}],
+        defaultItems: [
+          {"name":"спальни","value":"2","max":"3","min":"1"},
+          {"name":"кровати","value":"2","max":"3","min":"1"},
+          {"name":"ванные комнаты","value":"0","max":"3","min":"0"}
+        ],
         isMedium: true
       })
 
@@ -15,9 +18,12 @@
       +dropdown({
         fieldName: "DROPDOWN",
         dropdownName: "facilities",
-        items: ["спальни", "кровати", "ванные комнаты"],
-        placeholder: [{"name":"0","value":"0"}],
-        isMedium: true
+        defaultItems: [
+          {"name":"спальни","value":"2","max":"3","min":"1"},
+          {"name":"кровати","value":"2","max":"3","min":"1"},
+          {"name":"ванные комнаты","value":"0","max":"3","min":"0"}
+        ],
+        isMedium: true,
       })
 
   .dropdowns-block__guests
@@ -25,9 +31,12 @@
       +dropdown({
         fieldName: "DROPDOWN",
         dropdownName: "guests",
-        items: ["взрослые", "дети", "младенцы"],
-        isCalc: true,
-        placeholder: "Сколько гостей",
+        defaultItems: [
+          {"name":"взрослые","value":"0", "max":"3","min":"0"},
+          {"name":"дети","value":"0","max":"3","min":"0"},
+          {"name":"младенцы","value":"0", "max":"3","min":"0"}
+          ],
+        defaultContent: "Сколько гостей",
         confirmPanel: true
       })
 
@@ -35,8 +44,11 @@
       +dropdown({
         fieldName: "DROPDOWN",
         dropdownName: "guests",
-        items: ["взрослые", "дети", "младенцы"],
-        isCalc: true,
-        placeholder: "Сколько гостей",
+        defaultItems: [
+          {"name":"взрослые","value":"0", "max":"3","min":"0"},
+          {"name":"дети","value":"0","max":"3","min":"0"},
+          {"name":"младенцы","value":"0", "max":"3","min":"0"}
+          ],
+        defaultContent: "Сколько гостей",
         confirmPanel: true
       })
