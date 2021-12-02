@@ -2,16 +2,14 @@
 .buttons-block
   .buttons-block__wrapper
     .buttons-block__checkbox-wrapper
-      .buttons-block__title
-        p CHECKBOX BUTTONS
-      .buttons-block__checkbox-buttons
-        +checkbox({
-          item: [
-            {content: "Mожно курить", name: "checkbox buttons"},
-            {content: "Mожно с питомцами", name: "checkbox buttons"},
-            {content: "Mожно пригласить гостей (до 10 человек)", name: "checkbox buttons"}
-          ]
-        })
+      +checkbox({
+        item: [
+          {content: "Mожно курить", name: "checkbox buttons"},
+          {content: "Mожно с питомцами", name: "checkbox buttons"},
+          {content: "Mожно пригласить гостей (до 10 человек)", name: "checkbox buttons"}
+        ],
+        name: "CHECKBOX BUTTONS"
+      })
 
     .buttons-block__radio-wrapper
       .buttons-block__title

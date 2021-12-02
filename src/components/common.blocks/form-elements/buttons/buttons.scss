@@ -1,6 +1,3 @@
-// @import "../../../library.blocks/nouislider/nouislider.scss";
-// @import "../../../library.blocks/pagination/jquery.pajinatify.scss";
-// @import "../../../library.blocks/pagination/pagination.scss";
 .buttons-block {
   display: flex;
   &__wrapper:last-child {
@@ -11,9 +8,6 @@
   }
   &__checkbox-wrapper {
     max-width: 223px;
-  }
-  &__checkbox-buttons {
-    margin-top: 16.56px;
   }
   &__radio-buttons {
     display: flex;

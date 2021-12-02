@@ -1,0 +1,18 @@
+mixin checkbox(options)
+  - 
+    var droppedClass = ""
+    droppedClass += options.isDropped ? "" : "checkbox-list_active"
+  .checkbox
+    .checkbox-header
+      .checkbox-header__text= options.name
+      if options.isDropped
+        .checkbox-header__check-wrapper
+          .checkbox-header__check-mark
+    div(class = `checkbox-list ${droppedClass}`)
+      each val in options.item
+        .checkbox-button 
+          input(class="checkbox-button__custom" type="checkbox" name=val.name value=val.content)
+          label(class="checkbox-button__label" for=val.content)
+            .checkbox-button__icon-out
+              .checkbox-button__icon-in
+            div(class="checkbox-button__content")= val.content
