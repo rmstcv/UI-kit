@@ -4,7 +4,7 @@
 @import "./components/library.blocks/fields/fields.scss";
 @import "./components/library.blocks/buttons/buttons.scss";
 @import "./components/library.blocks/dropdown/dropdown.scss";
-@import "./components/library.blocks/list/list.scss";
+@import "./components/library.blocks/checkboxList/checkboxList.scss";
 @import "./components/library.blocks/nouislider/nouislider.scss";
 @import "./components/library.blocks/pagination/pagination.scss";
 @import "./components/common.blocks/logo/logo.scss";

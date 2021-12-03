@@ -11,6 +11,8 @@ function addClassToDropdowns() {
   const dropdowns = document.querySelectorAll('.form-elements .dropdown');
   for (let i = 1; i < dropdowns.length; i++) {
     dropdowns[i].lastChild.classList.add('dropdown__content-wrapper_show');
+    dropdowns[i].children[1].classList.add('dropdown__field_darker');
+
   };
   dropdowns[3].lastChild.lastChild.firstChild.classList.remove('dropdown__confirm-button_hide');
   addHandlerToGuestDropdown(dropdowns[3]);

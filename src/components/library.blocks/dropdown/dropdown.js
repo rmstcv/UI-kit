@@ -44,6 +44,7 @@ function checkExtrimValues (item) {
 function dropdownHide (item) {
   if(item.classList.contains('dropdown__check-wrapper')) {
     item.parentNode.nextSibling.classList.toggle('dropdown__content-wrapper_show');
+    item.parentNode.classList.toggle('dropdown__field_darker');
     checkExtrimValues (item);
   }
 };

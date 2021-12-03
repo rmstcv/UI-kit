@@ -8,7 +8,7 @@ function addCheckboxHandler () {
 };
 
 function showCheckboxList (item) {
-  console.log(item);
+
   if (item.classList.contains('checkbox-header__check-wrapper')) {
     item.closest('.checkbox').lastChild.classList.toggle('checkbox-list_active');
     item.firstChild.classList.toggle('checkbox-header__check-mark_active')

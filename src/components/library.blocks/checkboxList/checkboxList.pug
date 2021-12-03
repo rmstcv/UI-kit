@@ -2,6 +2,8 @@ mixin checkbox(options)
   - 
     var droppedClass = ""
     droppedClass += options.isDropped ? "" : "checkbox-list_active"
+    var richClass = ""
+    richClass += options.isRich? "checkbox-button__content_rich" : ""
   .checkbox
     .checkbox-header
       .checkbox-header__text= options.name
@@ -15,4 +17,6 @@ mixin checkbox(options)
           label(class="checkbox-button__label" for=val.content)
             .checkbox-button__icon-out
               .checkbox-button__icon-in
-            div(class="checkbox-button__content")= val.content
+            div(class=`checkbox-button__content ${richClass}`)= val.content
+              if options.isRich 
+                div(class="checkbox-button__descr")= val.descr
