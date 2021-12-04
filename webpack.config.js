@@ -2,12 +2,36 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ESLintPlugin = require('eslint-webpack-plugin');
 // const pug = {
 //   test: /\.pug$/,
 //   use: ['html-loader?attrs=false', 'pug-html-loader']
 // };
 
-//const isDev = process.env.NODE_ENV === 'development';
+const isDev = process.env.NODE_ENV === 'development';
+console.log('IS DEV', isDev);
+
+const jsLoaders = () => {
+  const loaders = [{
+    loader: 'babel-loader',
+    options: {
+      presets: ['@babel/preset-env'],
+      plugins: ["@babel/plugin-proposal-class-properties"]
+    },
+    // loader: 'eslint-loader',
+    //             options: {
+    //                 fix: true,
+    //                 eslintPath: 'eslint',
+    //                 emitError: true,
+    //                 emitWarning: true
+    //             }
+  }]
+
+  // if (isDev) {
+  //   loaders.push('eslint-loader')
+  // }
+  return loaders
+}
 
 const config = {
   context: path.resolve(__dirname, 'src'),
@@ -44,19 +68,25 @@ const config = {
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css'
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new ESLintPlugin()
   ],
   module: {
     rules: [
-       {
+      //  {
+      //   test: /\.js$/,
+      //   exclude: /node_modules/,
+      //   use: {
+      //     loader: 'babel-loader',
+      //     options: {
+      //       presets: ['@babel/preset-env']
+      //     }
+      //   }
+      // },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+        use: jsLoaders()
       },
       //  {
       //           test: /jquery.+\.js$/,

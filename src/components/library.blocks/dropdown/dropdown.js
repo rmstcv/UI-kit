@@ -2,7 +2,7 @@ dropdownHandler ();
 
 function dropdownHandler () {
   const dropdownCounter = document.querySelectorAll('.dropdown');
-  for(item of dropdownCounter) {
+  for(let item of dropdownCounter) {
     item.addEventListener('click' , (e) => {
       dropdownHide(e.target);
       itemIterator(e.target);
@@ -11,17 +11,17 @@ function dropdownHandler () {
       hideClearButton(e.target);
     }); 
   }
-};
+}
 
 function getDropdownData (node) {
   let data = JSON.parse(node.closest('.dropdown').getAttribute('data-dropdown-content'));
   return data;
-};
+}
 
 function setDropdownData (node, data) {
   let dataNew = data;
   node.closest('.dropdown').setAttribute('data-dropdown-content',  JSON.stringify(dataNew));
-};
+}
 
 function checkExtrimValues (item) {
   const elems = item.closest('.dropdown').lastChild.firstChild.children;
@@ -39,7 +39,7 @@ function checkExtrimValues (item) {
       elems[i].lastChild.lastChild.classList.remove('dropdown__counter_extreme-value');
     }
   }
-};
+}
 
 function dropdownHide (item) {
   if(item.classList.contains('dropdown__check-wrapper')) {
@@ -47,7 +47,7 @@ function dropdownHide (item) {
     item.parentNode.classList.toggle('dropdown__field_darker');
     checkExtrimValues (item);
   }
-};
+}
 
 function itemIterator (item) {
   if (item.classList.contains('dropdown__counter')) {
@@ -55,7 +55,7 @@ function itemIterator (item) {
     const allItems = item.closest('.dropdown__content').children;
     for (let i = 0; i <allItems.length; i++) {
       if (allItems[i].closest('.dropdown__item-wrapper') === item.closest('.dropdown__item-wrapper')) {
-        elem = i
+        elem = i;
       }
     }
     let data = getDropdownData(item);
@@ -71,14 +71,13 @@ function itemIterator (item) {
     setDropdownData(item, data);
     checkExtrimValues (item);
   }
-};
+}
 
 function dropdownClearValue (item) {
   if (item.classList.contains('dropdown__confirm-button_clear')) {
-    const dropdown = item.closest('.dropdown');
     const elems = item.closest('.dropdown__content-wrapper').firstChild.children;
     let data = getDropdownData (item);
-    for (i = 0; i < elems.length; i++) {
+    for (let i = 0; i < elems.length; i++) {
       elems[i].lastChild.children[1].innerHTML = data[i].min;
       data[i].value = data[i].min;
       elems[i].lastChild.children[0].classList.add('dropdown__counter_extreme-value');
@@ -86,7 +85,7 @@ function dropdownClearValue (item) {
     }
     setDropdownData(item, data);
   }
-};
+}
 
 function addTextToField(item) {
   if (item.classList.contains('dropdown__counter') || item.classList.contains('dropdown__confirm-button_clear')) {
@@ -96,14 +95,14 @@ function addTextToField(item) {
     let name, value;
     const items = dropdownField.nextSibling.firstChild.children;
     const data = getDropdownData(item);
-    for (i = 0; i < items.length; i++) {
+    for (let i = 0; i < items.length; i++) {
       name = data[i].name;
       value = data[i].value;
       arr[i] = {name: name, value: value};
     }
     dropdownField.firstChild.innerHTML = `${arr[0].value} ${arr[0].name}, ${arr[1].value} ${arr[1].name}...`;
   }
-};
+}
 
 function hideClearButton (item) {
   if (item.classList.contains('dropdown__counter') || item.classList.contains('dropdown__confirm-button_clear') || item.classList.contains('dropdown__check-wrapper')) {
@@ -111,7 +110,7 @@ function hideClearButton (item) {
     let sumItemsValues = 0;
     const confirmPanel = dropdown.lastChild.lastChild;
     const data = getDropdownData(item);
-    for (value of data) {
+    for (let value of data) {
       sumItemsValues += +value.value;
     }
      if (confirmPanel.classList.contains('dropdown__confirm-panel')) {
@@ -123,4 +122,4 @@ function hideClearButton (item) {
        }
      }
   }
-};
+}
