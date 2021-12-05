@@ -27,6 +27,7 @@
     "semi": ["warn","always"],
 		"quotes": ["warn","single"],
     "indent": ["warn",2],
-    "func-style": ["warn","expression"]
+    // "func-style": ["warn","expression"],
+    "func-call-spacing": ["warn", "never"]
   }
 }

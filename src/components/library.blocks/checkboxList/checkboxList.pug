@@ -8,9 +8,9 @@ mixin checkbox(options)
     .checkbox-header
       .checkbox-header__text= options.name
       if options.isDropped
-        .checkbox-header__check-wrapper
-          .checkbox-header__check-mark
-    div(class = `checkbox-list ${droppedClass}`)
+        .checkbox-header__check-wrapper.js-checkbox-header__check-wrapper
+          .checkbox-header__check-mark.js-checkbox-header__check-mark
+    div(class = `checkbox-list js-checkbox-list ${droppedClass}`)
       each val in options.item
         .checkbox-button 
           input(class="checkbox-button__custom" type="checkbox" name=val.name value=val.content)

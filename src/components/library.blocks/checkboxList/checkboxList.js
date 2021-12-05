@@ -3,39 +3,42 @@ class CheckBox {
     this.checkbox = checkbox;
   }
 
-  showCheckbox () {
-    this.checkbox.closest('.js-checkbox').lastChild.classList.toggle('checkbox-list_active');
-    this.checkbox.firstChild.classList.toggle('checkbox-header__check-mark_active');
+  addCheckboxHandler() {
+    this.checkbox.addEventListener('click', (e) => {
+      this.showCheckboxList(e.target);
+    });
+  }
+
+  findElem (elemClass) {
+    const elems = document.querySelectorAll(elemClass);
+
+    for (let i = 0; i < elems.length; i++) {
+      if (elems[i].closest('.js-checkbox') ==  this.checkbox) {
+        return elems[i];  
+      }
+    }
+
+  }
+
+  showCheckboxList (item) {
+    const list = this.findElem('.js-checkbox-list');
+    const checkMark = this.findElem('.js-checkbox-header__check-mark');
+
+    if (item.classList.contains('js-checkbox-header__check-wrapper')) {
+      checkMark.classList.toggle('checkbox-header__check-mark_active');
+      list.classList.toggle('checkbox-list_active');
+    }
+    
   }
 }
 
-let checkboxes = document.querySelectorAll('.checkbox-header__check-wrapper');
+function addCheckboxesLists (){
+  const checkboxes = document.querySelectorAll('.js-checkbox');
 
-for (let item of checkboxes) {
-
-  item.addEventListener('click', (e) => {
-    let checkbox = new CheckBox(e.target);
-    checkbox.showCheckbox();
+  checkboxes.forEach(checkbox =>  {
+    checkbox = new CheckBox(checkbox);
+    checkbox.addCheckboxHandler();
   });
-
 }
 
-// let checkboxHandle = function addCheckboxHandler () {
-//   const checkboxes = document.querySelectorAll('.js-checkbox');
-
-//   for(let item of checkboxes) {
-//     item.addEventListener('click', (e) => showCheckbox(e.target));
-//   }
-
-// };
-
-// let showCheckbox = function showCheckboxList (item) {
-
-//   if (item.classList.contains('checkbox-header__check-wrapper')) {
-//     item.closest('.js-checkbox').lastChild.classList.toggle('checkbox-list_active');
-//     item.firstChild.classList.toggle('checkbox-header__check-mark_active');
-//   }
-
-// };
-
-// checkboxHandle ();
+addCheckboxesLists();

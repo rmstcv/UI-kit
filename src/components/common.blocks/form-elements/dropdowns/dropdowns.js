@@ -13,10 +13,10 @@ function addClassToDropdowns() {
     dropdowns[i].lastChild.classList.add('dropdown__content-wrapper_show');
     dropdowns[i].children[1].classList.add('dropdown__field_darker');
 
-  };
+  }
   dropdowns[3].lastChild.lastChild.firstChild.classList.remove('dropdown__confirm-button_hide');
   addHandlerToGuestDropdown(dropdowns[3]);
-};
+}
 
 function checkGuests () {
   const dropdowns = document.querySelectorAll('.form-elements .dropdown');
