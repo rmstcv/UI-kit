@@ -1,14 +1,12 @@
 // import 'jquery';
-import './jquery.pajinatify.js';
+import './jquery.pajinatify';
 
-$(function(){
-
+$(() => {
   $('.pagination').pajinatify();
-
 });
 
 $('.pagination').pajinatify({
-  onChange: function (currentPage) {
+  onChange(currentPage) {
     console.log(currentPage);
   },
 });

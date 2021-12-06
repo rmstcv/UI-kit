@@ -1,2 +1,2 @@
-import "./dropdowns/dropdowns.js";
-import "./lists/lists.js";
+import './dropdowns/dropdowns';
+import './lists/lists';
