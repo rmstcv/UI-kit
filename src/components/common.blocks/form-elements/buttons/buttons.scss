@@ -34,9 +34,6 @@
   }
   .like-button-colored {
     margin-left: 10px;
-    .like-button__heart_unactive {
-      opacity: 1;
-    }
   }
   &__rate-wrapper {
     margin-top: 40px;
@@ -49,26 +46,10 @@
     .rate-buttons {
       &__item {
         margin-right: 4px;
-        &_uncolored {
-          background-image: url("components/library.blocks/buttons/star.svg");
-          &:last-child {
-            background-image: url("components/library.blocks/buttons/star_border.svg");
-          }
-        }
       }
     }
     &_all-stars {
       margin-left: 20px;
-      .rate-buttons {
-        &__item {
-          &_uncolored {
-            background-image: url("components/library.blocks/buttons/star.svg");
-            &:last-child {
-              background-image: url("components/library.blocks/buttons/star.svg");
-            }
-          }
-        }
-      }
     }
   }
   &__slider-wrapper {

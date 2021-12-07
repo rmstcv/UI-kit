@@ -85,36 +85,6 @@
   }
 }
 
-.like-button {
-  width: 39.72px;
-  height: 20px;
-  border: 1px solid $color-dark-25;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  &__content {
-    width: 50%;
-    height: 100%;
-    position: relative;
-  }
-  &__heart {
-    svg {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-    &_unactive {
-      opacity: 0;
-    }
-  }
-  &__number {
-    font-size: 10px;
-    line-height: 12px;
-    color: $color-dark-25;
-  }
-}
-
 .rate-buttons {
   display: flex;
 

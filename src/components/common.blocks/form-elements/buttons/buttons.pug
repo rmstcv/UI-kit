@@ -1,4 +1,3 @@
-//- include ../../../library.blocks/buttons/buttons.pug
 .buttons-block
   .buttons-block__wrapper
     .buttons-block__checkbox-wrapper
@@ -37,9 +36,15 @@
       .buttons-block__title
         p LIKE BUTTON
       .buttons-block__like-buttons
-        +like-button()
+        +like-button({
+          isLiked: false,
+          likes: 2
+        })
         .like-button-colored
-          +like-button()
+          +like-button({
+            isLiked: true,
+            likes: 12
+          })
 
     .buttons-block__rate-wrapper
       .buttons-block__title
@@ -47,11 +52,11 @@
           .buttons-block__stars-blocks
             .buttons-block__stars
               +rate-button({
-                stars: 5
+                rate: 4
               })
             .buttons-block__stars.buttons-block__stars_all-stars
               +rate-button({
-                stars: 5
+                rate: 5
               })
 
   .buttons-block__wrapper  
