@@ -26,7 +26,7 @@
     width: 100%;
   }
   &__liked-wrapper {
-    margin-top: 38.9px;
+    margin-top: 45px;
   }
   &__like-buttons {
     margin-top: 16px;
@@ -66,7 +66,7 @@
     margin-top: 23px;
   }
   &__simple-buttons-wrapper {
-    margin-top: 40px;
+    margin-top: 45px;
   }
   &__simple-buttons {
     &_colored {
@@ -84,14 +84,14 @@
       }
     }
     &_unborded {
-      margin-top: 31px;
+      margin-top: 16px;
       .simple-button:last-child {
         margin-left: 19px;
         color: $color-dark-50;
       }
     }
     &_long {
-      margin-top: 30px;
+      margin-top: 16px;
     }
   }
   &__pagination-wrapper {

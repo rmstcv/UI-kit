@@ -1,0 +1,9 @@
+.information-block {
+  margin-top: 95px;
+  display: flex;
+  justify-content: space-between;
+  &__reviews {
+    width: 714px;
+    margin-top: 10px;
+  }
+}

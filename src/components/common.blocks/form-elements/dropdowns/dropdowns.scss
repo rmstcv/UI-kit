@@ -1,5 +1,5 @@
 .dropdowns-block {
-  margin-top: 100px;
+  margin-top: 101px;
   display: flex;
   justify-content: space-between;
   &__facilities {
@@ -20,6 +20,7 @@
     &__text {
       position: absolute;
       right: 0;
+      font-size: 1.2rem;
     }
   }
 }

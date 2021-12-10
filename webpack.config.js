@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ESLintPlugin = require('eslint-webpack-plugin');
 // const pug = {
@@ -45,11 +45,11 @@ const config = {
   // resolve: {
   //   extensions: ['.js']
   // },
-  optimization: {
-    splitChunks: {
-      chunks: 'all'
-    }
-  },
+  // optimization: {
+  //   splitChunks: {
+  //     chunks: 'all'
+  //   }
+  // },
   devServer: {
     port: 4200,
     static: path.join(__dirname, 'src'),
@@ -73,6 +73,51 @@ const config = {
   ],
   module: {
     rules: [
+      {
+        test: /\.(png|jpg|gif)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/images/[hash][ext][query]'
+        }
+      },
+      {
+        test: /\.svg/,
+        type: 'asset/inline'
+      },
+      {
+        test: /\.(css|s[ac]ss)$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /\.(woff2|woff|ttf)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/fonts/[hash][ext][query]'
+        }
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: jsLoaders()
+      },
+      {
+        test: require.resolve('jquery'),
+        use: [
+          {
+            loader: "expose-loader",
+            options: {
+              exposes: ["$", "jQuery"]
+            }
+          }
+        ]
+      },
+      {
+        test: /\.pug$/,
+        loader: 'pug-loader',
+        options: {
+          pretty: false
+        }
+      },
       //  {
       //   test: /\.js$/,
       //   exclude: /node_modules/,
@@ -83,11 +128,6 @@ const config = {
       //     }
       //   }
       // },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: jsLoaders()
-      },
       //  {
       //           test: /jquery.+\.js$/,
       //           use: [{
@@ -107,70 +147,40 @@ const config = {
       //   {loader: 'sass-loader'},
       //   ]
       // },
-      {
-        test: /\.(css|s[ac]ss)$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
-      },
+
       // {
       //   test: /\.pug$/,
       //   use: ['pug-loader']
       // }, 
-      {
-        test: /\.pug$/,
-        loader: 'pug-loader',
-        options: {
-          pretty: false
-        }
-      },
-//        {
-//   test: /\.pug$/,
-//   use: [{
-//     loader: 'html-loader'
-//   }, {
-//     loader: 'pug-html-loader',
-//     options: {
-//       exports: false
-//     }
-//   }]
-// },
-    //   {
-    //     test: /\.html$/,
-    //     exclude: /node_modules/,
-    //     loader: 'html-loader'
-    // }, 
+
+      //        {
+      //   test: /\.pug$/,
+      //   use: [{
+      //     loader: 'html-loader'
+      //   }, {
+      //     loader: 'pug-html-loader',
+      //     options: {
+      //       exports: false
+      //     }
+      //   }]
+      // },
+      //   {
+      //     test: /\.html$/,
+      //     exclude: /node_modules/,
+      //     loader: 'html-loader'
+      // }, 
       // {
-      //   test: /\.(png|jpg|gif)$/,
+      //   test: /\.(png|jpg|gif|svg)$/,
       //   loader: 'file-loader',
-      //   options:{
+      //   options: {
       //     name: ('[name].[contenthash].[ext]'), // filename = (name, ext) => isDev ? `${name}.${ext}` : `${name}.[hash].${ext}`;
-      //     outputPath :  'static/images/'
+      //     outputPath: 'static/images/'
       //   }
       // },
-       {
-        test: /\.(woff2|woff|ttf)$/,
-        type: 'asset/resource',
-        generator: {
-         filename: 'static/fonts/[hash][ext][query]'
-       }
-      },
-      {
-        test: /\.(png|jpg|gif|svg)$/,
-        type: 'asset/resource',
-        generator: {
-         filename: 'static/images/[hash][ext][query]'
-       }
-      },
-      {
-        test: require.resolve('jquery'),
-      use: [
-        {
-          loader: "expose-loader",
-          options: {
-            exposes: ["$", "jQuery"]
-          }
-        }
-      ]
-      }
+
+
+
+
       // {
       //   test: /\.svg$/,
       //   exclude: path.resolve(__dirname, './src/webfonts'),

@@ -1,0 +1,15 @@
+mixin review(options)
+  .review
+    .review__person
+      .review__image-container
+        img(class="review__image" src=require("/components/library.blocks/reviews/" + options.image + ".png") alt="image" loading="lazy" width="48")
+      .review__text-content
+        .review__text.review__text_bold= options.name
+        .review__text= options.date 
+    .review__content
+      .review__likes
+        +like-button({
+            isLiked: true,
+            likes: 12
+          })
+      .review__text= options.review

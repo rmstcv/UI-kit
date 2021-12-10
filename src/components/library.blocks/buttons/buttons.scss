@@ -129,6 +129,7 @@
   &_unborded {
     background: none;
     border: none;
+    width: auto;
     color: $color-second;
     &:hover {
       opacity: 1;

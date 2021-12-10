@@ -2,6 +2,7 @@ class LikeButton {
   constructor(likeButton) {
     this.likeButton = likeButton;
     this.likes = +likeButton.getAttribute('data-likes');
+    this.test = 1;
   }
 
   getIsLike() {
@@ -42,10 +43,12 @@ class LikeButton {
   }
 
   addLikeButtonHandler() {
+    this.test = 2;
     this.likeButton.addEventListener('click', this.addLike);
   }
 
   addLike = () => {
+    console.log(this.test);
     const numOfLikes = this.findElems('.like-button__number-of-likes');
     if (this.getIsLike() === 0) {
       numOfLikes.innerHTML = this.likes + 1;

@@ -1,9 +1,9 @@
 function openCheckList(openedList) {
   const checkbox = document.querySelector(openedList);
-  const lists = document.querySelectorAll('checkbox-header__check-mark');
+  const lists = document.querySelectorAll('.checkbox-header__check-mark');
 
   for (let i = 0; i < lists.length; i += 1) {
-    if (lists[i].parentNode === checkbox) {
+    if (lists[i].closest('.checkbox-opened') === checkbox) {
       lists[i].classList.add('checkbox-header__check-mark_active');
     }
   }
