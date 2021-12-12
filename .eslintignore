@@ -1,2 +1,2 @@
 webpack.config.js
-src/components/library.blocks/pagination/jquery.pajinatify.js
+src/libs/jquery.pajinatify/jquery.pajinatify.js

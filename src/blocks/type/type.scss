@@ -1,0 +1,55 @@
+.type {
+  margin-right: 28px;
+  &__wrapper {
+    display: flex;
+  }
+  &__item {
+    width: 37px;
+    text-align: right;
+    font-weight: normal;
+    &_h1 {
+      @include type-h1;
+      &_lighter {
+        color: $color-dark-25;
+      }
+    }
+    &_h2 {
+      @include type-h2;
+      &_lighter {
+        color: $color-dark-25;
+      }
+    }
+    &_h3 {
+      @include type-h3;
+      &_lighter {
+        color: $color-dark-25;
+      }
+    }
+    &_body {
+      @include type-body;
+      &_lighter {
+        color: $color-dark-25;
+      }
+    }
+  }
+  &__text {
+    font-weight: normal;
+    max-width: 369px;
+    margin-left: 30px;
+    margin-bottom: 54px;
+    &_h1 {
+      @include type-h1;
+    }
+    &_h2 {
+      @include type-h2;
+    }
+    &_h3 {
+      @include type-h3;
+      margin-bottom: 46px;
+    }
+    &_body {
+      @include type-body;
+      width: 301px;
+    }
+  }
+}

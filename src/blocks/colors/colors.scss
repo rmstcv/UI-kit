@@ -1,0 +1,46 @@
+.colors {
+  &__wrapper {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+  &__color-name {
+    margin-left: 40px;
+    color: #1f2041;
+    &__text {
+      font-size: 1.9rem;
+      line-height: 27.79px;
+      &_bold {
+        font-weight: bold;
+      }
+    }
+  }
+  &__rectangle {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    &_dark {
+      &-100 {
+        background: $color-dark-100;
+      }
+      &-75 {
+        background: $color-dark-75;
+      }
+      &-50 {
+        background: $color-dark-50;
+      }
+      &-25 {
+        background: $color-dark-25;
+      }
+      &-5 {
+        background: $color-dark-5;
+      }
+    }
+    &_purple {
+      background: $color-second;
+    }
+    &_green {
+      background: $color-third;
+    }
+  }
+}

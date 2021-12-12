@@ -1,0 +1,56 @@
+include ../dropdown/dropdown.pug
+
+.dropdowns-block
+  .dropdowns-block__facilities 
+    .dropdown-wrapper
+      p(class="dropdown-wrapper__text") DEFAULT
+      +dropdown({
+        fieldName: "DROPDOWN",
+        dropdownName: "facilities",
+        defaultItems: [
+          {"name":"спальни","value":"2","max":"3","min":"1"},
+          {"name":"кровати","value":"2","max":"3","min":"1"},
+          {"name":"ванные комнаты","value":"0","max":"3","min":"0"}
+        ],
+        isMedium: true
+      })
+
+    .dropdown-wrapper
+      p(class="dropdown-wrapper__text") EXPANDED
+      +dropdown({
+        fieldName: "DROPDOWN",
+        dropdownName: "facilities",
+        defaultItems: [
+          {"name":"спальни","value":"2","max":"3","min":"1"},
+          {"name":"кровати","value":"2","max":"3","min":"1"},
+          {"name":"ванные комнаты","value":"0","max":"3","min":"0"}
+        ],
+        isMedium: true,
+      })
+
+  .dropdowns-block__guests
+    .dropdown-wrapper
+      +dropdown({
+        fieldName: "DROPDOWN",
+        dropdownName: "guests",
+        defaultItems: [
+          {"name":"взрослые","value":"0", "max":"3","min":"0"},
+          {"name":"дети","value":"0","max":"3","min":"0"},
+          {"name":"младенцы","value":"0", "max":"3","min":"0"}
+          ],
+        defaultContent: "Сколько гостей",
+        confirmPanel: true
+      })
+
+    .dropdown-wrapper
+      +dropdown({
+        fieldName: "DROPDOWN",
+        dropdownName: "guests",
+        defaultItems: [
+          {"name":"взрослые","value":"2", "max":"3","min":"0"},
+          {"name":"дети","value":"1","max":"3","min":"0"},
+          {"name":"младенцы","value":"0", "max":"3","min":"0"}
+          ],
+        defaultContent: "Сколько гостей",
+        confirmPanel: true
+      })

@@ -1,0 +1,108 @@
+.radio-button {
+  position: relative;
+  &__custom {
+    position: absolute;
+    opacity: 0;
+    width: 21px;
+    height: 21px;
+    border-radius: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    &:checked + label .radio-button {
+      &__icon-out {
+        position: relative;
+        width: 21px;
+        height: 21px;
+        border: 1px solid $color-second;
+        border-radius: 10px;
+        margin-right: 1rem;
+      }
+      &__icon-in {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-radius: 10px;
+        background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  &__label {
+    z-index: -1;
+    position: relative;
+    display: flex;
+  }
+  &__icon-out {
+    width: 21px;
+    height: 21px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 10px;
+    margin-right: 1rem;
+  }
+  &__content {
+    font-weight: normal;
+    font-size: $size-body;
+    color: $color-dark-50;
+  }
+}
+
+.simple-button {
+  width: 99px;
+  height: 44px;
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  border-radius: 22px;
+  border: none;
+  @include type-h3;
+  color: #fff;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.5;
+  }
+  &_uncolored {
+    color: $color-second;
+    background: linear-gradient(#fff, #fff) padding-box,
+      linear-gradient(to right, #bc9cff 0%, #8ba4f9) border-box;
+    padding: 10px;
+    border: 2px solid transparent;
+  }
+  &_unborded {
+    background: none;
+    border: none;
+    width: auto;
+    color: $color-second;
+    &:hover {
+      opacity: 1;
+      color: $color-dark-50;
+    }
+  }
+  &_long {
+    width: 320px;
+    position: relative;
+    &:hover {
+      opacity: 1;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-bottom: 2px solid #fff;
+      border-left: 2px solid #fff;
+      transform: rotate(-135deg) translate(-50%);
+      top: 12.8px;
+      right: 24px;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: #fff;
+      width: 15px;
+      height: 2px;
+      top: 50%;
+      right: 12px;
+      transform: translate(-50%);
+    }
+  }
+}

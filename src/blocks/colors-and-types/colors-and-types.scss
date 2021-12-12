@@ -1,0 +1,11 @@
+.colors-and-types {
+  &__logo-wrapper {
+    position: absolute;
+    left: -120px;
+    top: -115px;
+  }
+  display: flex;
+  justify-content: space-between;
+  margin-top: 145px;
+  position: relative;
+}

@@ -1,0 +1,111 @@
+.buttons-block {
+  display: flex;
+  &__wrapper:last-child {
+    margin-left: 132px;
+  }
+  &__title {
+    @include type-h3;
+  }
+  &__checkbox-wrapper {
+    max-width: 223px;
+  }
+  &__radio-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+  &__radio-wrapper {
+    margin-top: 38.9px;
+    max-width: 223px;
+  }
+  &__toggle-buttons {
+    margin-top: 16px;
+    &:last-child {
+      margin-top: 10px;
+    }
+  }
+  &__toggle-wrapper {
+    margin-top: 38.9px;
+    width: 100%;
+  }
+  &__liked-wrapper {
+    margin-top: 45px;
+  }
+  &__like-buttons {
+    margin-top: 16px;
+    display: flex;
+  }
+  .like-button-colored {
+    margin-left: 10px;
+  }
+  &__rate-wrapper {
+    margin-top: 40px;
+  }
+  &__stars-blocks {
+    display: flex;
+    margin-top: 16px;
+  }
+  &__stars {
+    .rate-buttons {
+      &__item {
+        margin-right: 4px;
+      }
+    }
+    &_all-stars {
+      margin-left: 20px;
+    }
+  }
+  &__slider-wrapper {
+    .buttons-block__title {
+      display: flex;
+      justify-content: space-between;
+    }
+    .buttons-block__title > p:last-child {
+      font-weight: normal;
+      color: $color-dark-50;
+    }
+  }
+  &__slider {
+    margin-top: 23px;
+  }
+  &__simple-buttons-wrapper {
+    margin-top: 45px;
+  }
+  &__simple-buttons {
+    &_colored {
+      margin-top: 16px;
+      .simple-button:last-child {
+        margin-left: 19px;
+        opacity: 0.5;
+      }
+    }
+    &_uncolored {
+      margin-top: 30px;
+      .simple-button:last-child {
+        margin-left: 19px;
+        opacity: 0.5;
+      }
+    }
+    &_unborded {
+      margin-top: 16px;
+      .simple-button:last-child {
+        margin-left: 19px;
+        color: $color-dark-50;
+      }
+    }
+    &_long {
+      margin-top: 16px;
+    }
+  }
+  &__pagination-wrapper {
+    margin-top: 40px;
+  }
+  &__pagination {
+    margin-top: 16px;
+  }
+  &__pagination-descr {
+    @include type-body;
+    margin-top: 10px;
+    margin-left: 6px;
+  }
+}

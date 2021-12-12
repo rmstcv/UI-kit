@@ -1,0 +1,21 @@
+.rate-buttons {
+  display: flex;
+
+  &__item {
+    position: relative;
+    &_hide {
+      display: none;
+    }
+    &_uncolored {
+      width: 20px;
+      height: 19px;
+      background-image: url("blocks/button-rate/star_border.svg");
+    }
+
+    &_colored {
+      width: 20px;
+      height: 19px;
+      background-image: url("blocks/button-rate/star.svg");
+    }
+  }
+}
