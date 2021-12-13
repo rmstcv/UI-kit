@@ -1,0 +1,12 @@
+mixin dropdown-date (options)
+  - 
+    var fieldLength = ""
+    fieldLength += options.isSmall ? "dropdown-date_small" :
+    options.isMedium ? "dropdown-date_medium" :
+    options.isLarge ? "dropdown-date_large" :
+    "dropdown-date__input_medium"
+  div(class=`dropdown-date ${fieldLength}`)
+    p(class="dropdown-date__text")= options.fieldName
+    .dropdown-date__check-wrapper
+      .dropdown-date__check-mark
+    input(class=`dropdown-date__input` type="text" placeholder= options.placeholder value=options.value)

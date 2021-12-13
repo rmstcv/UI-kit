@@ -13,16 +13,7 @@
     right: 0;
   }
   &__check-mark {
-    border: none;
-    background: none;
-    position: absolute;
-    width: 9px;
-    height: 9px;
-    border-left: 2px solid $color-dark-50;
-    border-bottom: 2px solid $color-dark-50;
-    bottom: 50%;
-    left: 50%;
-    transform: rotate(-45deg) translate(-50%);
+    @include dropdown-mark;
     z-index: -1;
     &_active {
       border: none;
@@ -59,16 +50,7 @@
       margin-right: 1rem;
     }
     &:checked + label .checkbox-button__icon-in {
-      position: absolute;
-      width: 8px;
-      height: 6px;
-      border-left: 2px solid transparent;
-      border-bottom: 2px solid transparent;
-      border-image: linear-gradient(180deg, $color-second 0%, #8ba4f9 100%);
-      border-image-slice: 1;
-      top: 23%;
-      left: 57%;
-      transform: rotate(-45deg) translate(-50%, -50%);
+      @include checkbox-mark-in;
     }
   }
   &__label {
@@ -77,12 +59,7 @@
     display: flex;
   }
   .checkbox-button__icon-out {
-    position: relative;
-    min-width: 20px;
-    height: 20px;
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    border-radius: 4px;
-    margin-right: 1rem;
+    @include checkbox-mark-out;
   }
   &__content {
     font-weight: normal;

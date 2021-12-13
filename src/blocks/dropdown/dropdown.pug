@@ -13,13 +13,14 @@ mixin dropdown(options)
         button(class = "dropdown__check-mark")
     .dropdown__content-wrapper.js-dropdown__content-wrapper
       .dropdown__content
-        each val in options.defaultItems
-          div(class="dropdown__item-wrapper js-dropdown__item-wrapper")
-            div(class="dropdown__item-name")= val.name
-            div(class="dropdown__item-counter")
-              button(class="dropdown__counter dropdown__counter_prev js-dropdown__counter_prev dropdown__counter_extreme-value") -
-              div(class="dropdown__counter-value js-dropdown__counter-value")= val.value
-              button(class="dropdown__counter dropdown__counter_next js-dropdown__counter_next") +
+        if (options.defaultItems)
+          each val in options.defaultItems
+            div(class="dropdown__item-wrapper js-dropdown__item-wrapper")
+              div(class="dropdown__item-name")= val.name
+              div(class="dropdown__item-counter")
+                button(class="dropdown__counter dropdown__counter_prev js-dropdown__counter_prev dropdown__counter_extreme-value") -
+                div(class="dropdown__counter-value js-dropdown__counter-value")= val.value
+                button(class="dropdown__counter dropdown__counter_next js-dropdown__counter_next") +
       if (options.confirmPanel)
        .dropdown__confirm-panel.js-dropdown__confirm-panel
           button(class="dropdown__confirm-button dropdown__confirm-button_clear js-dropdown__confirm-button_clear dropdown__confirm-button_hide") Очистить

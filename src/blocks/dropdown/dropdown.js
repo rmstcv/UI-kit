@@ -155,11 +155,9 @@ class Dropdown {
       const data = this.getDropdownData();
       const dropdownField = this.findElem('.js-dropdown__preview-wrapper');
       let sumItemsValues = 0;
-
-      // for (let value of data) {
-      //   sumItemsValues += +value.value;
-      // }
-      data.forEach((value) => { sumItemsValues += +value.value; });
+      if (data) {
+        data.forEach((value) => { sumItemsValues += +value.value; });
+      }
 
       if (confirmPanel) {
         if (sumItemsValues !== 0) {

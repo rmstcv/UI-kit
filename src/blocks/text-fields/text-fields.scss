@@ -17,18 +17,18 @@
       color: $color-dark-50;
       font-weight: normal;
     }
-    .field-default {
-      &__text-wrapper {
-        display: flex;
-        justify-content: space-between;
-      }
-      &__text {
-        &_light {
-          color: $color-dark-50;
-          font-weight: normal;
-        }
-      }
-    }
+    // .field-default {
+    //   &__text-wrapper {
+    //     display: flex;
+    //     justify-content: space-between;
+    //   }
+    //   &__text {
+    //     &_light {
+    //       color: $color-dark-50;
+    //       font-weight: normal;
+    //     }
+    //   }
+    // }
   }
   .field-wrapper:first-child {
     margin-top: 0;
@@ -38,8 +38,8 @@
       display: flex;
       justify-content: space-between;
     }
-    .field-default {
-      margin-top: 42px;
-    }
+    // .field-default {
+    //   margin-top: 42px;
+    // }
   }
 }

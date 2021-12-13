@@ -1,6 +1,8 @@
 @import "./less/variables.scss";
 @import "./libs/fonts.css";
 @import "./less/mixins/types.scss";
+@import "./less/mixins/marks.scss";
+@import "./less/mixins/inputs.scss";
 @import "/less/style.scss";
 
 * {

@@ -59,16 +59,7 @@
     cursor: pointer;
   }
   &__check-mark {
-    border: none;
-    background: none;
-    position: absolute;
-    width: 9px;
-    height: 9px;
-    border-left: 2px solid $color-dark-50;
-    border-bottom: 2px solid $color-dark-50;
-    bottom: 50%;
-    left: 50%;
-    transform: rotate(-45deg) translate(-50%);
+    @include dropdown-mark;
     z-index: -1;
   }
   &__item-name {
