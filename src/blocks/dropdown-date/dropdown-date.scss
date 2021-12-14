@@ -1,10 +1,13 @@
 .dropdown-date {
   position: relative;
+  
   &__text {
     @include type-h3;
   }
-  &_small {
-      @include input-small
+  &__input {
+    @include input;
+    &_small {
+    @include input-small
     }
     &_medium {
       @include input-medium
@@ -12,8 +15,6 @@
     &_large {
       @include input-large
     }
-  &__input {
-    @include input;
     &:hover {
      @include input-hover;
     }
@@ -34,9 +35,12 @@
   &__check-mark {
     @include dropdown-mark;
   }
-  &_dropdown {
-    &::placeholder {
-      color: $color-dark-75;
-    }
+  &__separate-wrapper {
+    display: flex;
+    justify-content: space-between;
+    @include input-large;
+  }
+  &__separate {
+    position: relative;
   }
 }

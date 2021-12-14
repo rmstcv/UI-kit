@@ -1,12 +1,20 @@
+//- include ../date-picker/date-picker.pug
 mixin dropdown-date (options)
   - 
     var fieldLength = ""
-    fieldLength += options.isSmall ? "dropdown-date_small" :
-    options.isMedium ? "dropdown-date_medium" :
-    options.isLarge ? "dropdown-date_large" :
+    fieldLength += options.isSmall ? "dropdown-date__input_small" :
+    options.isMedium ? "dropdown-date__input_medium" :
+    options.isLarge ? "dropdown-date__input_large" :
     "dropdown-date__input_medium"
-  div(class=`dropdown-date ${fieldLength}`)
+  div(class=`dropdown-date`)
     p(class="dropdown-date__text")= options.fieldName
-    .dropdown-date__check-wrapper
-      .dropdown-date__check-mark
-    input(class=`dropdown-date__input` type="text" placeholder= options.placeholder value=options.value)
+    .dropdown-date__separate-wrapper
+      .dropdown-date__separate
+        .dropdown-date__check-wrapper
+          .dropdown-date__check-mark
+        input(class=`dropdown-date__input ${fieldLength}` type="text" placeholder= options.placeholder value=options.value)
+      .dropdown-date__separate
+        .dropdown-date__check-wrapper
+          .dropdown-date__check-mark
+        input(class=`dropdown-date__input ${fieldLength}` type="text" placeholder= options.placeholder value=options.value)
+    .date-picker
