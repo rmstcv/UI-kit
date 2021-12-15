@@ -6,15 +6,15 @@ mixin dropdown-date (options)
     options.isMedium ? "dropdown-date__input_medium" :
     options.isLarge ? "dropdown-date__input_large" :
     "dropdown-date__input_medium"
-  div(class=`dropdown-date`)
+  div(class="dropdown-date")
     p(class="dropdown-date__text")= options.fieldName
     .dropdown-date__separate-wrapper
       .dropdown-date__separate
         .dropdown-date__check-wrapper
           .dropdown-date__check-mark
-        input(class=`dropdown-date__input ${fieldLength}` type="text" placeholder= options.placeholder value=options.value)
+        input(class=`dropdown-date__input dropdown-date__input-check-in ${fieldLength}` type="text" placeholder= options.placeholder value=options.value)
       .dropdown-date__separate
         .dropdown-date__check-wrapper
           .dropdown-date__check-mark
-        input(class=`dropdown-date__input ${fieldLength}` type="text" placeholder= options.placeholder value=options.value)
-    .date-picker
+        input(class=`dropdown-date__input dropdown-date__input-check-out ${fieldLength}` type="text" placeholder= options.placeholder value=options.value)
+    include ../date-picker/date-picker.pug

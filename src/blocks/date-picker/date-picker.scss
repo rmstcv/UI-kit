@@ -1,0 +1,11 @@
+.date-picker {
+  @include input-large;
+  &_hide {
+    display: none;
+  }
+  position: absolute;
+    .air-datepicker {
+      position: absolute;
+      width: 100%;
+    }
+}
