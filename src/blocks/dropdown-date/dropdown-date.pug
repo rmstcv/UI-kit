@@ -6,15 +6,25 @@ mixin dropdown-date (options)
     options.isMedium ? "dropdown-date__input_medium" :
     options.isLarge ? "dropdown-date__input_large" :
     "dropdown-date__input_medium"
+
+    var pickerType = ""
+    pickerType += !options.isSeparate ? "dropdown-date__date-picker-double" : ""
   div(class="dropdown-date")
     p(class="dropdown-date__text")= options.fieldName
-    .dropdown-date__separate-wrapper
-      .dropdown-date__separate
-        .dropdown-date__check-wrapper
-          .dropdown-date__check-mark
-        input(class=`dropdown-date__input dropdown-date__input-check-in ${fieldLength}` type="text" placeholder= options.placeholder value=options.value)
-      .dropdown-date__separate
-        .dropdown-date__check-wrapper
-          .dropdown-date__check-mark
-        input(class=`dropdown-date__input dropdown-date__input-check-out ${fieldLength}` type="text" placeholder= options.placeholder value=options.value)
-    include ../date-picker/date-picker.pug
+      if options.isSeparate
+        .dropdown-date__separate-wrapper
+          .dropdown-date__separate
+            .dropdown-date__check-wrapper
+              .dropdown-date__check-mark
+            input(class=`dropdown-date__input dropdown-date__input-check-in ${fieldLength}` type="text" placeholder= options.placeholder value=options.value disabled)
+          .dropdown-date__separate
+            .dropdown-date__check-wrapper
+              .dropdown-date__check-mark
+            input(class=`dropdown-date__input dropdown-date__input-check-out ${fieldLength}` type="text" placeholder= options.placeholder value=options.value disabled)
+      else 
+        .dropdown-date__separate
+          .dropdown-date__check-wrapper
+            .dropdown-date__check-mark
+          input(class=`dropdown-date__input dropdown-date__input-check ${fieldLength}` type="text" placeholder= options.placeholder value=options.value disabled)
+    div(class=`dropdown-date__date-picker_hide ${pickerType}`)
+      include ../date-picker/date-picker.pug
