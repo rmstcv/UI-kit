@@ -28,28 +28,37 @@ class DatePicker {
     return searchedElems;
   }
 
-  setDatesForPicker(dateCheckIn, dateCheckOut) {
+  setDatesForPicker() {
+    const dateIn = localStorage.getItem('dateIn');
+    const dateOut = localStorage.getItem('dateOut');
+    let dateCheckIn = new Date(dateIn);
+    let dateCheckOut = new Date(dateOut);
     const checkInInput = this.searchElemForPicker('.dropdown-date__input-check-in');
     const checkOutInput = this.searchElemForPicker('.dropdown-date__input-check-out');
     const checkInput = this.searchElemForPicker('.dropdown-date__input-check');
-    // const dates = this.airDatepickerItem.getAttribute('data-datesOfCheck').split(',');
-    // const [dateCheckIn, dateCheckOut] = dates;
+    const optionsDateDouble = {
+      month: 'numeric',
+      day: 'numeric',
+      year: 'numeric',
+    };
+    const optionsDateSingle = {
+      month: 'short',
+      day: 'numeric',
+    };
     if (checkInput) {
-      if (dateCheckOut) {
-        checkInput.value = `${dateCheckIn} - ${dateCheckOut}`;
-      } else {
-        checkInput.value = `${dateCheckIn} - ДД.ММ.ГГГГ`;
-      }
+      if (!dateIn) dateCheckIn = 'ДД мес.';
+      if (!dateOut) dateCheckOut = 'ДД мес.';
+      dateCheckIn = dateCheckIn.toLocaleString('ru', optionsDateSingle);
+      dateCheckOut = dateCheckOut.toLocaleString('ru', optionsDateSingle);
+      checkInput.value = `${dateCheckIn} - ${dateCheckOut}`;
     }
     if (checkInInput && checkOutInput) {
-      if (dateCheckIn) {
-        checkInInput.value = dateCheckIn;
-      }
-      if (dateCheckOut) {
-        checkOutInput.value = dateCheckOut;
-      } else {
-        checkOutInput.value = 'ДД.ММ.ГГГГ';
-      }
+      if (!dateIn) dateCheckIn = 'ДД.ММ.ГГГГ';
+      if (!dateOut) dateCheckOut = 'ДД.ММ.ГГГГ';
+      dateCheckIn = dateCheckIn.toLocaleString('ru', optionsDateDouble);
+      dateCheckOut = dateCheckOut.toLocaleString('ru', optionsDateDouble);
+      checkInInput.value = dateCheckIn;
+      checkOutInput.value = dateCheckOut;
     }
   }
 
@@ -67,18 +76,16 @@ function addDropdownDatePicker() {
   const airDatepickers = document.querySelectorAll('.date-picker');
   airDatepickers.forEach((airDatepickerItem) => {
     const dropdownDatePicker = new DatePicker(airDatepickerItem);
-    // dropdownDatePicker.addDateUpdater();
     const dp = createAirDatePicker(airDatepickerItem, dropdownDatePicker.setDatesForPicker);
+    const initDateIn = airDatepickerItem.parentNode.getAttribute('data-dateIn');
+    const initDateOut = airDatepickerItem.parentNode.getAttribute('data-dateOut');
+    console.log(initDateIn, initDateOut);
+    if (initDateIn) localStorage.setItem('dateIn', initDateIn);
+    if (initDateOut) localStorage.setItem('dateOut', initDateOut);
+    // dropdownDatePicker.setDatesForPicker();
     dp.setFocusDate(dp.viewDate);
-    fetch('../../db.json')
-      .then((response) => response.json())
-      .then((result) => {
-        localStorage.setItem('dateIn', result.dateIn);
-        dp.selectDate(localStorage.getItem('dateIn'));
-        dp.selectDate(result.dateOut);
-      });
-    // dp.selectDate('2021-08-06');
-    // dp.selectDate('2021-08-17');
+    dp.selectDate(initDateIn);
+    dp.selectDate(initDateOut);
     dropdownDatePicker.showDatePicker();
   });
 }
