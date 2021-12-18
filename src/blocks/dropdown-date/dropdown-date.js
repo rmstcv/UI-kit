@@ -3,7 +3,7 @@ import createAirDatePicker from '../date-picker/date-picker';
 class DatePicker {
   constructor(airDatepickerItem) {
     this.airDatepickerItem = airDatepickerItem;
-    this.setDatesForPicker = this.setDatesForPicker.bind(this);
+    this.showDates = this.showDates.bind(this);
   }
 
   searchElemForPicker(elem) {
@@ -28,9 +28,21 @@ class DatePicker {
     return searchedElems;
   }
 
-  setDatesForPicker() {
-    const dateIn = localStorage.getItem('dateIn');
-    const dateOut = localStorage.getItem('dateOut');
+  static setDates(dateCheckIn, dateCheckOut) {
+    console.log(dateCheckIn, dateCheckOut);
+    if (dateCheckIn) {
+      localStorage.setItem('dateIn', dateCheckIn);
+    } else {
+      localStorage.removeItem('dateIn');
+    }
+    if (dateCheckOut) {
+      localStorage.setItem('dateOut', dateCheckOut);
+    } else {
+      localStorage.removeItem('dateOut');
+    }
+  }
+
+  showDates(dateIn, dateOut) {
     let dateCheckIn = new Date(dateIn);
     let dateCheckOut = new Date(dateOut);
     const checkInInput = this.searchElemForPicker('.dropdown-date__input-check-in');
@@ -70,24 +82,25 @@ class DatePicker {
       });
     });
   }
+
+  initDatePicker() {
+    const initDateIn = this.airDatepickerItem.parentNode.getAttribute('data-dateIn');
+    const initDateOut = this.airDatepickerItem.parentNode.getAttribute('data-dateOut');
+    localStorage.removeItem('dateIn');
+    localStorage.removeItem('dateOut');
+    this.showDatePicker();
+    this.showDates(initDateIn, initDateOut);
+  }
 }
 
-function addDropdownDatePicker() {
-  const airDatepickers = document.querySelectorAll('.date-picker');
+function addDropdownDate(picker) {
+  const airDatepickers = document.querySelectorAll(picker);
   airDatepickers.forEach((airDatepickerItem) => {
-    const dropdownDatePicker = new DatePicker(airDatepickerItem);
-    const dp = createAirDatePicker(airDatepickerItem, dropdownDatePicker.setDatesForPicker);
-    const initDateIn = airDatepickerItem.parentNode.getAttribute('data-dateIn');
-    const initDateOut = airDatepickerItem.parentNode.getAttribute('data-dateOut');
-    console.log(initDateIn, initDateOut);
-    if (initDateIn) localStorage.setItem('dateIn', initDateIn);
-    if (initDateOut) localStorage.setItem('dateOut', initDateOut);
-    // dropdownDatePicker.setDatesForPicker();
-    dp.setFocusDate(dp.viewDate);
-    dp.selectDate(initDateIn);
-    dp.selectDate(initDateOut);
-    dropdownDatePicker.showDatePicker();
+    const DropDate = new DatePicker(airDatepickerItem);
+    createAirDatePicker(airDatepickerItem, DatePicker.setDates, DropDate.showDates);
+    DropDate.initDatePicker();
   });
 }
 
-addDropdownDatePicker();
+addDropdownDate('.dropdown-date__date-picker-double .date-picker');
+addDropdownDate('.dropdown-date__date-picker-single .date-picker');

@@ -8,7 +8,7 @@ mixin dropdown-date (options)
     "dropdown-date__input_medium"
 
     var pickerType = ""
-    pickerType += !options.isSeparate ? "dropdown-date__date-picker-double" : ""
+    pickerType += !options.isSeparate ? "dropdown-date__date-picker-double" : "dropdown-date__date-picker-single"
   div(class="dropdown-date")
     p(class="dropdown-date__text")= options.fieldName
       if options.isSeparate
@@ -21,10 +21,12 @@ mixin dropdown-date (options)
             .dropdown-date__check-wrapper
               .dropdown-date__check-mark
             input(class=`dropdown-date__input dropdown-date__input-check-out ${fieldLength}` type="text" placeholder= options.placeholder value="" disabled)
+        div(class=`dropdown-date__date-picker_hide ${pickerType}` data-dateIn=options.dateIn data-dateOut=options.dateOut)
+          include ../date-picker/date-picker.pug
       else 
         .dropdown-date__separate
           .dropdown-date__check-wrapper
             .dropdown-date__check-mark
           input(class=`dropdown-date__input dropdown-date__input-check ${fieldLength}` type="text" placeholder= options.placeholder value="" disabled)
-    div(class=`dropdown-date__date-picker_hide ${pickerType}` data-dateIn=options.dateIn data-dateOut=options.dateOut)
-      include ../date-picker/date-picker.pug
+        div(class=`dropdown-date__date-picker_hide ${pickerType}` data-dateIn=options.dateIn data-dateOut=options.dateOut)
+          include ../date-picker/date-picker.pug

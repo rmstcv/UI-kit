@@ -1,6 +1,6 @@
 import AirDatepicker from 'air-datepicker';
 
-function createAirDatePicker(airDatepickerItem, callback) {
+function createAirDatePicker(airDatepickerItem, setDates, showDates) {
   let [dateCheckIn, dateCheckOut] = [];
   const button = {
     content: 'Применить',
@@ -10,6 +10,10 @@ function createAirDatePicker(airDatepickerItem, callback) {
       dp.selectDate(date);
     },
   };
+  let initDateIn = airDatepickerItem.parentNode.getAttribute('data-dateIn');
+  let initDateOut = airDatepickerItem.parentNode.getAttribute('data-dateOut');
+  if (!initDateIn) initDateIn = '';
+  if (!initDateOut) initDateOut = '';
   const dp = new AirDatepicker(airDatepickerItem, {
     range: true,
     multipleDatesSeparator: ' - ',
@@ -20,19 +24,10 @@ function createAirDatePicker(airDatepickerItem, callback) {
     buttons: ['clear', button],
     onSelect() {
       [dateCheckIn, dateCheckOut] = dp.selectedDates;
-      // localStorage.setItem('dateIn', dateCheckIn);
-      if (dateCheckIn) {
-        localStorage.setItem('dateIn', dateCheckIn);
-      } else {
-        localStorage.removeItem('dateIn');
-      }
-      if (dateCheckOut) {
-        localStorage.setItem('dateOut', dateCheckOut);
-      } else {
-        localStorage.removeItem('dateOut');
-      }
-      if (callback) callback();
+      if (setDates) setDates(dateCheckIn, dateCheckOut);
+      if (showDates) showDates(dateCheckIn, dateCheckOut);
     },
+    selectedDates: [initDateIn, initDateOut],
   });
   return dp;
 }
