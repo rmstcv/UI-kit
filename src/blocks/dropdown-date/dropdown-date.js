@@ -4,6 +4,7 @@ class DatePicker {
   constructor(airDatepickerItem) {
     this.airDatepickerItem = airDatepickerItem;
     this.showDates = this.showDates.bind(this);
+    this.showDatePicker = this.showDatePicker.bind(this);
   }
 
   searchElemForPicker(elem) {
@@ -29,7 +30,6 @@ class DatePicker {
   }
 
   static setDates(dateCheckIn, dateCheckOut) {
-    console.log(dateCheckIn, dateCheckOut);
     if (dateCheckIn) {
       localStorage.setItem('dateIn', dateCheckIn);
     } else {
@@ -78,14 +78,14 @@ class DatePicker {
     const items = this.searchElemsForPicker('.dropdown-date__check-wrapper');
     items.forEach((item) => {
       item.addEventListener('click', () => {
-        this.airDatepickerItem.parentNode.classList.toggle('dropdown-date__date-picker_hide');
+        this.airDatepickerItem.classList.toggle('date-picker_hide');
       });
     });
   }
 
   initDatePicker() {
-    const initDateIn = this.airDatepickerItem.parentNode.getAttribute('data-dateIn');
-    const initDateOut = this.airDatepickerItem.parentNode.getAttribute('data-dateOut');
+    const initDateIn = this.airDatepickerItem.getAttribute('data-dateIn');
+    const initDateOut = this.airDatepickerItem.getAttribute('data-dateOut');
     localStorage.removeItem('dateIn');
     localStorage.removeItem('dateOut');
     this.showDatePicker();
@@ -97,7 +97,12 @@ function addDropdownDate(picker) {
   const airDatepickers = document.querySelectorAll(picker);
   airDatepickers.forEach((airDatepickerItem) => {
     const DropDate = new DatePicker(airDatepickerItem);
-    createAirDatePicker(airDatepickerItem, DatePicker.setDates, DropDate.showDates);
+    const args = [
+      airDatepickerItem,
+      DatePicker.setDates,
+      DropDate.showDates,
+    ];
+    createAirDatePicker(...args);
     DropDate.initDatePicker();
   });
 }
