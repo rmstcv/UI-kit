@@ -31,7 +31,7 @@
 
 .noUi-horizontal {
   height: 6px;
-  width: 266px;
+  @include input_medium;
 }
 
 .noUi-horizontal .noUi-handle {

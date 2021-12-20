@@ -15,7 +15,7 @@ function addRangeClassHandler(airDatepickerItem) {
   const inRangeElems = document.querySelectorAll('.air-datepicker-body--cells.-days-');
   let item;
   inRangeElems.forEach((elem) => {
-    if (elem.closest('.date-picker') === airDatepickerItem) item = elem;
+    if (elem.closest('.js-date-picker') === airDatepickerItem) item = elem;
   });
   item.parentNode.addEventListener('mousemove', () => {
     checkRangeClass();
@@ -38,7 +38,6 @@ function createAirDatePicker(...args) {
   if (!initDateOut) initDateOut = '';
   const dp = new AirDatepicker(airDatepickerItem, {
     range: true,
-    multipleDatesSeparator: ' - ',
     inline: true,
     navTitles: {
       days: 'MMMM yyyy',

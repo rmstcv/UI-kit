@@ -1,6 +1,6 @@
 function checkGuests() {
   const dropdowns = document.querySelectorAll('.form-elements .dropdown');
-  const dataGuests = JSON.parse(dropdowns[3].getAttribute('data-dropdown-content'));
+  const dataGuests = JSON.parse(dropdowns[4].getAttribute('data-dropdown-content'));
   const totalGuests = +dataGuests[0].value + +dataGuests[1].value;
   let nameTotalGuests = 'гость';
 
@@ -24,7 +24,7 @@ function checkGuests() {
       nameTotalGuests = 'гостей';
     }
   }
-  dropdowns[3].children[1].firstChild.innerHTML = `${totalGuests} ${nameTotalGuests}`;
+  dropdowns[4].children[1].firstChild.innerHTML = `${totalGuests} ${nameTotalGuests}`;
 }
 
 checkGuests();
@@ -39,12 +39,12 @@ function addHandlerToGuestDropdown(item) {
 
 function addClassToDropdowns() {
   const dropdowns = document.querySelectorAll('.form-elements .dropdown');
-  for (let i = 1; i < dropdowns.length; i += 1) {
+  for (let i = 2; i < dropdowns.length; i += 1) {
     dropdowns[i].lastChild.classList.add('dropdown__content-wrapper_show');
     dropdowns[i].children[1].classList.add('dropdown__field_darker');
   }
-  dropdowns[3].lastChild.lastChild.firstChild.classList.remove('dropdown__confirm-button_hide');
-  addHandlerToGuestDropdown(dropdowns[3]);
+  dropdowns[4].lastChild.lastChild.firstChild.classList.remove('dropdown__confirm-button_hide');
+  addHandlerToGuestDropdown(dropdowns[4]);
 }
 
 addClassToDropdowns();

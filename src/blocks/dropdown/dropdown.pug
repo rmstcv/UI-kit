@@ -1,7 +1,30 @@
+//- 
+  Принимает:
+    fieldName {string} - подпись дропдауна
+    dropdownName {string} - имя класса обертки, для идетификации дропдауна
+    defaultItems {array of objects} - в формате: {"name":"взрослые","value":"0", "max":"3","min":"0"}
+    defaultContent {string} - текст плэйсхолдера
+    confirmPanel {bool} - дополнительно кнопки подтверждения и очистки
+    isSmal {bool} - ширина инпута(по умолчанию isLarge)
+
+    Вызов:
+      +dropdown({
+        fieldName: "DROPDOWN",
+        dropdownName: "guests",
+        defaultItems: [
+          {"name":"взрослые","value":"0", "max":"3","min":"0"},
+          {"name":"дети","value":"0","max":"3","min":"0"},
+          {"name":"младенцы","value":"0", "max":"3","min":"0"}
+          ],
+        defaultContent: "Сколько гостей",
+        confirmPanel: true,
+        isSmal: true
+      })
+
 mixin dropdown(options)
   - 
     var fieldLength = ""
-    fieldLength += options.isSmall ? "dropdown_small" : options.isMedium ? "dropdown_medium" : ""
+    fieldLength += options.isSmall ? "dropdown_small" : options.isMedium ? "dropdown_medium" : "dropdown_large"
     var content = ""
     content += options.defaultContent ? options.defaultContent : `${options.defaultItems[0].value} ${options.defaultItems[0].name}, ${options.defaultItems[1].value} ${options.defaultItems[1].name}...`
   div(class = `${fieldLength} dropdown js-dropdown`  data-dropdown-name=options.dropdownName data-dropdown-content=options.defaultItems data-dropdown-content-default=content)

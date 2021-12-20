@@ -1,4 +1,24 @@
-//- include ../date-picker/date-picker.pug
+//- 
+  Принимает:
+    fieldName {string} - имя поля input
+    fieldNameDouble {string} - имя второго поля input (если стоит флаг isDouble)
+    type {string} - тип input (записывается в аттрибут "type")
+    placeholder {string} - плейсхолдер input
+    dateIn {string} - дата приезда (!в формате "YYYY, m, D")
+    dateOut {string} - дата отъезда (!в формате "YYYY, m, D")
+    isSmall  {bool} - ширина каждого input (isSmall, isMedium, isLarge)
+    isDouble {bool} - тип поля (isDouble - 2 отдельных поля(дата приезда и отъезда), если параметр отсутсвует, то по умолчанию 1 общее поле)
+    Вызов:
+      +dropdown-date({
+        fieldName: "DATE DROPDOWN", 
+        type: "text", 
+        placeholder: "ДД.ММ.ГГГГ",
+        dateIn: "2019, 7, 23",
+        dateOut: "2019, 7, 19",
+        isSmall: true,
+        isDouble: true
+      })
+
 include ../date-picker/date-picker.pug
 mixin dropdown-date (options)
   - 
@@ -7,33 +27,32 @@ mixin dropdown-date (options)
     options.isMedium ? "dropdown-date__input_medium" :
     options.isLarge ? "dropdown-date__input_large" :
     "dropdown-date__input_medium"
-
-    var pickerType = ""
-    pickerType += !options.isDouble ? "dropdown-date__date-picker-double" : "dropdown-date__date-picker-single"
-  div(class="dropdown-date")
-    p(class="dropdown-date__text")= options.fieldName
-      if options.isDouble
-        .dropdown-date__double-wrapper
-          .dropdown-date__double
-            .dropdown-date__check-wrapper
-              .dropdown-date__check-mark
-            input(class=`dropdown-date__input dropdown-date__input-check-in ${fieldLength}` type="text" placeholder= options.placeholder value="" disabled)
-          .dropdown-date__double
-            .dropdown-date__check-wrapper
-              .dropdown-date__check-mark
-            input(class=`dropdown-date__input dropdown-date__input-check-out ${fieldLength}` type="text" placeholder= options.placeholder value="" disabled)
-        div(class=` ${pickerType}`)
-          +addAirDatePicker({
-            dateIn: options.dateIn,
-            dateOut: options.dateOut,
-          })
-      else 
+  div(class="dropdown-date js-dropdown-date")
+    if options.isDouble
+      .dropdown-date__double-wrapper
         .dropdown-date__double
-          .dropdown-date__check-wrapper
+          p(class="dropdown-date__text")= options.fieldName
+          .dropdown-date__check-wrapper.js-dropdown-date__check-wrapper
             .dropdown-date__check-mark
-          input(class=`dropdown-date__input dropdown-date__input-check ${fieldLength}` type="text" placeholder= options.placeholder value="" disabled)
-        div(class=`${pickerType}`)
-          +addAirDatePicker({
-            dateIn: options.dateIn,
-            dateOut: options.dateOut,
-          })
+          input(class=`dropdown-date__input dropdown-date__input-check-in js-dropdown-date__input-check-in ${fieldLength}` type="text" placeholder= options.placeholder value="" disabled)
+        .dropdown-date__double
+          p(class="dropdown-date__text")= options.fieldNameDouble
+          .dropdown-date__check-wrapper.js-dropdown-date__check-wrapper
+            .dropdown-date__check-mark
+          input(class=`dropdown-date__input dropdown-date__input-check-out js-dropdown-date__input-check-out ${fieldLength}` type="text" placeholder= options.placeholder value="" disabled)
+      div(class=`dropdown-date__date-picker-double js-dropdown-date__date-picker-double`)
+        +addAirDatePicker({
+          dateIn: options.dateIn,
+          dateOut: options.dateOut,
+        })
+    else 
+      .dropdown-date__single
+        p(class="dropdown-date__text")= options.fieldName
+        .dropdown-date__check-wrapper.js-dropdown-date__check-wrapper
+          .dropdown-date__check-mark
+        input(class=`dropdown-date__input dropdown-date__input-check js-dropdown-date__input-check ${fieldLength}` type="text" placeholder= options.placeholder value="" disabled)
+      div(class=`dropdown-date__date-picker-single js-dropdown-date__date-picker-single`)
+        +addAirDatePicker({
+          dateIn: options.dateIn,
+          dateOut: options.dateOut,
+        })

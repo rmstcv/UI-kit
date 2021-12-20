@@ -3,6 +3,7 @@
 @import "./less/mixins/types.scss";
 @import "./less/mixins/marks.scss";
 @import "./less/mixins/inputs.scss";
+@import "./less/mixins/form-container.scss";
 @import "/less/style.scss";
 
 * {

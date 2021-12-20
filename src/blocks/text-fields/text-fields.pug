@@ -37,35 +37,28 @@ include ../dropdown-date/dropdown-date.pug
 
   .dropdown-wrapper
     .date-dropdown-wrapper  
-
+    .field-wrapper
       +dropdown-date({
-        fieldName: "DATE DROPDOWN", 
+        fieldName: "DATE DROPDOWN",
         type: "text", 
         placeholder: "ДД.ММ.ГГГГ",
         dateOut: "2019, 7, 19",
         isSmall: true,
         isDouble: true
       })
-    
-      +dropdown-date({
-        fieldName: "DATE DROPDOWN", 
-        type: "text", 
-        dateIn: "2019, 7, 19",
-        dateOut: "2019, 7, 23",
-        isLarge: true
-      })
-
-    //- +dropdown-date({
-    //-     fieldName: "FILTER DATE DROPDOWN", 
-    //-     type: "text", 
-    //-     value: "19 авг - 23 авг",
-    //-     isMedium: true
-    //- })
-
-    +field-default({
-        fieldName: "SUBSCRIPTION TEXT FIELD", 
-        type: "email", 
-        placeholder: "Email",
-        subscr: true,
-        isMedium: true
-    })
+      .field-wrapper
+        +dropdown-date({
+          fieldName: "DATE DROPDOWN", 
+          type: "text", 
+          dateIn: "2019, 7, 19",
+          dateOut: "2019, 7, 23",
+          isLarge: true
+        })
+    .field-wrapper
+      +field-default({
+          fieldName: "SUBSCRIPTION TEXT FIELD", 
+          type: "email", 
+          placeholder: "Email",
+          subscr: true,
+          isMedium: true
+        })
