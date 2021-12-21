@@ -42,6 +42,12 @@ class DatePicker {
     }
   }
 
+  getDates() {
+    const dateCheckIn = localStorage.getItem('dateIn');
+    const dateCheckOut = localStorage.getItem('dateOut');
+    this.showDates(dateCheckIn, dateCheckOut);
+  }
+
   showDates(dateIn, dateOut) {
     let dateCheckIn = new Date(dateIn);
     let dateCheckOut = new Date(dateOut);
@@ -84,19 +90,26 @@ class DatePicker {
   }
 
   initDatePicker() {
-    const initDateIn = this.airDatepickerItem.getAttribute('data-dateIn');
-    const initDateOut = this.airDatepickerItem.getAttribute('data-dateOut');
-    localStorage.removeItem('dateIn');
-    localStorage.removeItem('dateOut');
+    // const initDateIn = this.airDatepickerItem.getAttribute('data-dateIn');
+    // const initDateOut = this.airDatepickerItem.getAttribute('data-dateOut');
+    const initDateInDefault = this.airDatepickerItem.getAttribute('data-dateIn');
+    const initDateOutDefault = this.airDatepickerItem.getAttribute('data-dateOut');
+    // const initDateIn = localStorage.getItem('dateIn');
+    // const initDateOut = localStorage.getItem('dateOut');
+    // if (initDateIn) initDateInDefault = initDateIn;
+    // if (initDateOut) initDateOutDefault = initDateOut;
+    // localStorage.removeItem('dateIn');
+    // localStorage.removeItem('dateOut');
     this.showDatePicker();
-    this.showDates(initDateIn, initDateOut);
+    this.showDates(initDateInDefault, initDateOutDefault);
   }
 }
 
 function addDropdownDate(picker) {
   const airDatepickers = document.querySelectorAll(picker);
+  let DropDate;
   airDatepickers.forEach((airDatepickerItem) => {
-    const DropDate = new DatePicker(airDatepickerItem);
+    DropDate = new DatePicker(airDatepickerItem);
     const args = [
       airDatepickerItem,
       DatePicker.setDates,
@@ -105,7 +118,11 @@ function addDropdownDate(picker) {
     createAirDatePicker(...args);
     DropDate.initDatePicker();
   });
+  return DropDate;
 }
 
-addDropdownDate('.js-dropdown-date__date-picker-double .js-date-picker');
-addDropdownDate('.js-dropdown-date__date-picker-single .js-date-picker');
+// addDropdownDate('.js-dropdown-date__date-picker-double .js-date-picker');
+// addDropdownDate('.js-dropdown-date__date-picker-single .js-date-picker');
+addDropdownDate('.field-wrapper .js-date-picker');
+
+export default addDropdownDate;

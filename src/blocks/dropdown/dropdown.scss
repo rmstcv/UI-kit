@@ -60,7 +60,7 @@
   }
   &__check-mark {
     @include dropdown-mark;
-    z-index: -1;
+    // z-index: -1;
   }
   &__item-name {
     @include type-h3;

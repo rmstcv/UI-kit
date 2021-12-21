@@ -75,9 +75,9 @@ class Dropdown {
   }
 
   dropdownHide(item) {
-    if (item.classList.contains('dropdown__check-wrapper')) {
-      const content = this.findElem('.js-dropdown__content-wrapper');
-      const field = this.findElem('.js-dropdown__field');
+    const content = this.findElem('.js-dropdown__content-wrapper');
+    const field = this.findElem('.js-dropdown__field');
+    if (item.classList.contains('dropdown__check-wrapper') || item.classList.contains('dropdown__check-mark')) {
       content.classList.toggle('dropdown__content-wrapper_show');
       field.classList.toggle('dropdown__field_darker');
       this.checkExtrimValues();

@@ -7,3 +7,4 @@ import './blocks/pagination/pagination';
 import './blocks/form-elements/form-elements';
 // import './blocks/date-picker/date-picker';
 import './blocks/dropdown-date/dropdown-date';
+import './blocks/booking-form/booking-form';

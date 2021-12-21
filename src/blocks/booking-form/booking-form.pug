@@ -1,0 +1,27 @@
+include ../dropdown-date/dropdown-date.pug
+include ../dropdown/dropdown.pug
+.booking-form 
+  .booking-form__room-info
+  .booking-form__dates
+    +dropdown-date({
+        fieldName: "ПРИБЫТИЕ", 
+        fieldNameDouble: "ВЫЕЗД",  
+        type: "text", 
+        placeholder: "ДД.ММ.ГГГГ",
+        dateIn: "2019, 7, 19",
+        dateOut: "2019, 7, 23",
+        isSmall: true,
+        isDouble: true
+      })
+  .booking-form__guests
+    +dropdown({
+      fieldName: "ГОСТИ",
+      dropdownName: "guests",
+      defaultItems: [
+        {"name":"взрослые","value":"3", "max":"3","min":"0"},
+        {"name":"дети","value":"0","max":"3","min":"0"},
+        {"name":"младенцы","value":"0", "max":"3","min":"0"}
+        ],
+      defaultContent: "3 гостя",
+      confirmPanel: true
+    })

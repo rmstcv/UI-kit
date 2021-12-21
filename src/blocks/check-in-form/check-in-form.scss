@@ -1,5 +1,6 @@
 .check-in-form {
   @include form-container;
+  background-color: #fff;
   &__title {
     @include type-h1;
   }

@@ -4,6 +4,17 @@
   &__text {
     @include type-h3;
   }
+  &__check-wrapper {
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    margin-top: 5px;
+    right: 0;
+    cursor: pointer;
+  }
+  &__check-mark {
+    @include dropdown-mark;
+  }
   &__input {
     @include input;
     &_small {
@@ -24,17 +35,6 @@
     &:focus {
       @include input-focus;
     }
-  }
-  &__check-wrapper {
-    width: 44px;
-    height: 44px;
-    position: absolute;
-    margin-top: 5px;
-    right: 0;
-    cursor: pointer;
-  }
-  &__check-mark {
-    @include dropdown-mark;
   }
   &__double-wrapper {
     display: flex;
