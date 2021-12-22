@@ -1,7 +1,6 @@
 include ../dropdown-date/dropdown-date.pug
 include ../dropdown/dropdown.pug
 .booking-form 
-  .booking-form__room-info
   .booking-form__dates
     +dropdown-date({
         fieldName: "ПРИБЫТИЕ", 
@@ -25,3 +24,4 @@ include ../dropdown/dropdown.pug
       defaultContent: "3 гостя",
       confirmPanel: true
     })
+  .booking-form__calc

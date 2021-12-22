@@ -44,5 +44,13 @@
   }
   &__double {
     position: relative;
+    &:hover input{
+     @include input-hover;
+    }
+  }
+  &__single {
+    &:hover input{
+     @include input-hover;
+    }
   }
 }

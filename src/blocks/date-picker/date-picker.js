@@ -36,12 +36,6 @@ function createAirDatePicker(...args) {
   let initDateOut = airDatepickerItem.getAttribute('data-dateOut');
   if (!initDateIn) initDateIn = '';
   if (!initDateOut) initDateOut = '';
-  // const initDateInDefault = airDatepickerItem.getAttribute('data-dateIn');
-  // const initDateOutDefault = airDatepickerItem.getAttribute('data-dateOut');
-  // let initDateIn = localStorage.getItem('dateIn');
-  // let initDateOut = localStorage.getItem('dateOut');
-  // if (!initDateIn) initDateIn = initDateInDefault;
-  // if (!initDateOut) initDateOut = initDateOutDefault;
   const dp = new AirDatepicker(airDatepickerItem, {
     range: true,
     inline: true,
@@ -59,8 +53,6 @@ function createAirDatePicker(...args) {
   });
   addRangeClassHandler(airDatepickerItem);
   checkRangeClass();
-  // setDates(initDateIn, initDateOut);
-  // showDates(initDateIn, initDateOut);
   return dp;
 }
 

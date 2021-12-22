@@ -98,8 +98,8 @@ class DatePicker {
     // const initDateOut = localStorage.getItem('dateOut');
     // if (initDateIn) initDateInDefault = initDateIn;
     // if (initDateOut) initDateOutDefault = initDateOut;
-    // localStorage.removeItem('dateIn');
-    // localStorage.removeItem('dateOut');
+    localStorage.removeItem('dateIn');
+    localStorage.removeItem('dateOut');
     this.showDatePicker();
     this.showDates(initDateInDefault, initDateOutDefault);
   }
