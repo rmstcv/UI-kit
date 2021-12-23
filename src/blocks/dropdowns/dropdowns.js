@@ -42,6 +42,7 @@ function addClassToDropdowns() {
   for (let i = 2; i < dropdowns.length; i += 1) {
     dropdowns[i].lastChild.classList.add('dropdown__content-wrapper_show');
     dropdowns[i].children[1].classList.add('dropdown__field_darker');
+    dropdowns[i].lastChild.style.position = 'relative';
   }
   dropdowns[4].lastChild.lastChild.firstChild.classList.remove('dropdown__confirm-button_hide');
   addHandlerToGuestDropdown(dropdowns[4]);

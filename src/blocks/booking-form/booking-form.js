@@ -6,9 +6,9 @@ addDropdownDate('.booking-form .js-date-picker');
 localStorage.setItem('room', '888');
 
 class BookingForm {
-  constructor(form, rooms) {
+  constructor(form) {
     this.form = document.querySelector(form);
-    this.rooms = rooms;
+    this.rooms = data;
     this.roomData = this.getRoom();
   }
 
@@ -24,15 +24,26 @@ class BookingForm {
     return roomInfo;
   }
 
+  static addSpace(num) {
+    const digitNum = num.toString().split('');
+    const digitNumNew = [];
+    for (let i = 0; i < digitNum.length; i += 1) {
+      digitNumNew.unshift(digitNum[digitNum.length - 1 - i]);
+      if ((i + 1) % 3 === 0) {
+        digitNumNew.unshift(' ');
+      }
+    }
+    return digitNumNew.join('');
+  }
+
   insertRoomInfo() {
-    // const roomData = this.getRoom();
     const roomInfoElem = document.createElement('div');
     const content = `
       <div>
         <span class = "booking-form__num" >№</span><span class = "booking-form__room">${this.roomData.room}</span><span class = "booking-form__class">${this.roomData.class}</span>
       </div>
       <div>
-        <span class = "booking-form__price">${this.roomData.price}Р</span><span class = "booking-form__text">в сутки</span>
+        <span class = "booking-form__price">${BookingForm.addSpace(this.roomData.price)}&#8381;</span><span class = "booking-form__text">в сутки</span>
       </div>
     `;
     roomInfoElem.classList.add('booking-form__room-info');
@@ -50,24 +61,24 @@ class BookingForm {
     const addServices = 0;
     const sale = 2179;
     const services = 300;
-    const total = addServices + services + (price * days);
+    const total = BookingForm.addSpace(addServices + services - sale + (price * days));
     if (days === 1) daysPostfix = 'сутки';
     const content = `
     <div class = "booking-form__value-calc">
-      <div>${this.roomData.price} x ${days} ${daysPostfix}</div>
-      <div>${price * days}</div>
+      <div>${BookingForm.addSpace(this.roomData.price)}&#8381; x ${days} ${daysPostfix}</div>
+      <div>${BookingForm.addSpace(price * days)}&#8381;</div>
     </div>
     <div class = "booking-form__value-calc">
-      <div>Сбор за услуги: скидка ${sale}</div>
-      <div>${addServices}</div>
+      <div>Сбор за услуги: скидка ${BookingForm.addSpace(sale)}&#8381;</div>
+      <div>${addServices}&#8381;</div>
     </div>
     <div class = "booking-form__value-calc">
       <div>Сбор за дополнительные услуги</div>
-      <div>${services}</div>
+      <div>${services}&#8381;</div>
     </div>
     <div class = "booking-form__value-calc booking-form__value-calc_big">
       <div>Итого</div>
-      <div>${total}</div>
+      <div>${total}&#8381;</div>
     </div>
     `;
     calcInfoElem.classList.add('booking-form__calc-content');
@@ -82,5 +93,5 @@ class BookingForm {
   }
 }
 
-const bookingForm = new BookingForm('.booking-form', data);
+const bookingForm = new BookingForm('.booking-form');
 bookingForm.init();
