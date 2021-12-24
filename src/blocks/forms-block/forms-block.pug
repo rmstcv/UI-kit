@@ -1,5 +1,9 @@
 .forms-block
   .layer 
   include ../logo/logo.html
-  include ../check-in-form/check-in-form.pug
-  include ../booking-form/booking-form.pug
+  .forms-block__horizontal-block
+    .forms-block__vertical-block
+      include ../check-in-form/check-in-form.pug
+      .forms-block__reg-form
+        include ../reg-form/reg-form.pug
+    include ../booking-form/booking-form.pug

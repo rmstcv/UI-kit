@@ -3,6 +3,7 @@
   &__custom {
     position: absolute;
     opacity: 0;
+    z-index: 1;
     width: 21px;
     height: 21px;
     border-radius: 10px;
@@ -30,7 +31,6 @@
     }
   }
   &__label {
-    z-index: -1;
     position: relative;
     display: flex;
   }

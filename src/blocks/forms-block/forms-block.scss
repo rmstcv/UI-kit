@@ -1,6 +1,18 @@
 .forms-block {
   position: relative;
   margin-top: 150px;
+  &__horizontal-block {
+    display: flex;
+    justify-content: space-between;
+
+  }
+  &__vertical-block {
+    display: flex;
+    flex-direction: column;
+  }
+  &__reg-form {
+    margin-top: 40px;
+  }
 }
 
 .layer {
