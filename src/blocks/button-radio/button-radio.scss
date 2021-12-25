@@ -33,6 +33,7 @@
   &__label {
     position: relative;
     display: flex;
+    align-items: center;
   }
   &__icon-out {
     width: 21px;
@@ -42,8 +43,7 @@
     margin-right: 1rem;
   }
   &__content {
-    font-weight: normal;
-    font-size: $size-body;
+    @include type-body;
     color: $color-dark-50;
   }
 }

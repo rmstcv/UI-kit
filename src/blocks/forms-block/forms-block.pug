@@ -4,6 +4,9 @@
   .forms-block__horizontal-block
     .forms-block__vertical-block
       include ../check-in-form/check-in-form.pug
-      .forms-block__reg-form
+      .forms-block__form-wrapper
         include ../reg-form/reg-form.pug
-    include ../booking-form/booking-form.pug
+    .forms-block__vertical-block
+      include ../booking-form/booking-form.pug
+      .forms-block__form-wrapper
+        include ../login-form/login-form.pug
