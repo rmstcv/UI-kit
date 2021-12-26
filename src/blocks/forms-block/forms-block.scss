@@ -13,6 +13,9 @@
   &__form-wrapper {
     margin-top: 40px;
   }
+  &__date-picker {
+    @include input-large;
+  }
 }
 
 .layer {

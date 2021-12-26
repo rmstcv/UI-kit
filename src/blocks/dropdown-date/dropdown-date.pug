@@ -8,6 +8,7 @@
     dateOut {string} - дата отъезда (!в формате "YYYY, m, D")
     isSmall  {bool} - ширина каждого input (isSmall, isMedium, isLarge)
     isDouble {bool} - тип поля (isDouble - 2 отдельных поля(дата приезда и отъезда), если параметр отсутсвует, то по умолчанию 1 общее поле)
+    isOpen {bool} - показать date-picker
     Вызов:
       +dropdown-date({
         fieldName: "DATE DROPDOWN", 
@@ -16,8 +17,12 @@
         dateIn: "2019, 7, 23",
         dateOut: "2019, 7, 19",
         isSmall: true,
-        isDouble: true
+        isDouble: true,
+        isOpen: true
       })
+      Вызов dropdown-date.js - создает экземпляр DatePicker (с dropdown field)
+      import addDropdownDate from '../dropdown-date/dropdown-date';
+      addDropdownDate('.js-date-picker');
 
 include ../date-picker/date-picker.pug
 mixin dropdown-date (options)
@@ -44,6 +49,7 @@ mixin dropdown-date (options)
         +addAirDatePicker({
           dateIn: options.dateIn,
           dateOut: options.dateOut,
+          isOpen: options.isOpen
         })
     else 
       .dropdown-date__single
@@ -55,5 +61,6 @@ mixin dropdown-date (options)
         +addAirDatePicker({
           dateIn: options.dateIn,
           dateOut: options.dateOut,
+          isOpen: options.isOpen
         })
   

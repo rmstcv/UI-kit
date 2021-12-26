@@ -1,3 +1,5 @@
+include ../date-picker/date-picker.pug
+
 .forms-block
   .layer 
   include ../logo/logo.html
@@ -10,3 +12,10 @@
       include ../booking-form/booking-form.pug
       .forms-block__form-wrapper
         include ../login-form/login-form.pug
+    .forms-block__vertical-block
+      .forms-block__date-picker
+        +addAirDatePicker({
+          dateIn: "2019, 8, 23",
+          dateOut: "2019, 8, 19",
+          isOpen: true
+         })

@@ -90,14 +90,8 @@ class DatePicker {
   }
 
   initDatePicker() {
-    // const initDateIn = this.airDatepickerItem.getAttribute('data-dateIn');
-    // const initDateOut = this.airDatepickerItem.getAttribute('data-dateOut');
     const initDateInDefault = this.airDatepickerItem.getAttribute('data-dateIn');
     const initDateOutDefault = this.airDatepickerItem.getAttribute('data-dateOut');
-    // const initDateIn = localStorage.getItem('dateIn');
-    // const initDateOut = localStorage.getItem('dateOut');
-    // if (initDateIn) initDateInDefault = initDateIn;
-    // if (initDateOut) initDateOutDefault = initDateOut;
     localStorage.removeItem('dateIn');
     localStorage.removeItem('dateOut');
     this.showDatePicker();
@@ -121,8 +115,6 @@ function addDropdownDate(picker) {
   return DropDate;
 }
 
-// addDropdownDate('.js-dropdown-date__date-picker-double .js-date-picker');
-// addDropdownDate('.js-dropdown-date__date-picker-single .js-date-picker');
 addDropdownDate('.field-wrapper .js-date-picker');
 
 export default addDropdownDate;

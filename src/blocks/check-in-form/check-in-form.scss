@@ -3,6 +3,7 @@
   background-color: #fff;
   &__title {
     @include type-h1;
+    @include input-large;
   }
   &__dates {
     margin-top: 21px;
