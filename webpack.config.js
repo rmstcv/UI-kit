@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ESLintPlugin = require('eslint-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 // const pug = {
 //   test: /\.pug$/,
 //   use: ['html-loader?attrs=false', 'pug-html-loader']
@@ -40,7 +41,8 @@ const config = {
   },
   output: {
     filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    // publicPath: '/'
   },
   // resolve: {
   //   extensions: ['.js']
@@ -69,7 +71,12 @@ const config = {
       filename: '[name].[contenthash].css'
     }),
     new CleanWebpackPlugin(),
-    new ESLintPlugin()
+    new ESLintPlugin(),
+    new CopyPlugin({
+      patterns: [
+        { from: "assets/images", to: "assets/images" },
+      ],
+    }),
   ],
   module: {
     rules: [

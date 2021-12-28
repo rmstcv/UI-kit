@@ -1,6 +1,8 @@
 include ../dropdown-date/dropdown-date.pug
 include ../dropdown/dropdown.pug
+include ../room-short-info/room-short-info.pug
 .booking-form 
+  +roomShortInfo({})
   .booking-form__dates
     +dropdown-date({
         fieldName: "ПРИБЫТИЕ", 

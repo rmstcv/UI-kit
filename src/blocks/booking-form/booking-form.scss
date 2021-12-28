@@ -9,27 +9,6 @@
     justify-content: space-between;
     align-items: flex-end;
   }
-  &__num {
-    @include type-h1;
-    font-size: 14px;
-    line-height: 1rem;
-  }
-  &__room {
-    @include type-h1;
-    line-height: 1rem;
-  }
-  &__class {
-    @include type-h3;
-    font-weight: normal;
-    margin-left: 5px;
-    line-height: 1rem;
-  }
-  &__price {
-    @include type-h3;
-  }
-  &__text {
-    margin-left: 5px;
-  }
   &__value-calc {
     margin-top: 10px;
     display: flex;
