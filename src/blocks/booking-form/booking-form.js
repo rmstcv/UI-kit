@@ -1,28 +1,17 @@
-import data from '../../data.json';
+// import data from '../../data.json';
 import addDropdownDate from '../dropdown-date/dropdown-date';
 import insertRoomInfo from '../room-short-info/room-short-info';
 import addSpace from '../../libs/add-spaces';
+import getDataRoom from '../../libs/data-finder';
 
 addDropdownDate('.booking-form .js-date-picker');
 localStorage.setItem('room', '888');
 
 class BookingForm {
-  constructor(form) {
-    this.form = document.querySelector(form);
-    this.rooms = data;
-    this.roomData = this.getRoom();
-  }
-
-  getRoom() {
-    const room = localStorage.getItem('room');
-    let roomInfo;
-    for (let i = 0; i < this.rooms.length; i += 1) {
-      if (this.rooms[i].room === room) {
-        roomInfo = this.rooms[i];
-        break;
-      }
-    }
-    return roomInfo;
+  constructor() {
+    this.form = document.querySelector('.booking-form');
+    this.room = localStorage.getItem('room');
+    this.roomData = this.getDataRoom(this.room);
   }
 
   insertCalcInfo() {
@@ -61,11 +50,12 @@ class BookingForm {
   }
 
   init() {
-    this.insertRoomInfo(this.roomData);
+    this.insertRoomInfo(this.room, this.form.firstElementChild);
     this.insertCalcInfo();
   }
 }
 BookingForm.prototype.insertRoomInfo = insertRoomInfo;
 BookingForm.prototype.addSpace = addSpace;
-const bookingForm = new BookingForm('.booking-form');
+BookingForm.prototype.getDataRoom = getDataRoom;
+const bookingForm = new BookingForm();
 bookingForm.init();

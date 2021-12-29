@@ -2,17 +2,21 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    height: 2rem;
   &__num {
     @include type-h1;
     font-size: 14px;
+    display: inline-block;
     line-height: 1rem;
   }
   &__room {
     @include type-h1;
+    display: inline-block;
     line-height: 1rem;
   }
   &__class {
     @include type-h3;
+    display: inline-block;
     font-weight: normal;
     margin-left: 5px;
     line-height: 1rem;
