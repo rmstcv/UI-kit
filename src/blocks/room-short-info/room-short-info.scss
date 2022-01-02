@@ -20,11 +20,15 @@
     font-weight: normal;
     margin-left: 5px;
     line-height: 1rem;
+    color: $color-second;
+    font-weight: 700;
   }
   &__price {
     @include type-h3;
+    color: $color-dark-50;
   }
   &__text {
     margin-left: 5px;
+    color: $color-dark-50;
   }
 }

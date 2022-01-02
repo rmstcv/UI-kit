@@ -16,6 +16,9 @@
   &__date-picker {
     @include input-large;
   }
+  &__card .room-card {
+    margin-top: 40px;
+  }
 }
 
 .layer {
