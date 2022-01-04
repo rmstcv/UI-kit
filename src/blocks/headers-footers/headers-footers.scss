@@ -1,0 +1,15 @@
+.headers-footers-wrapper {
+  padding-top: 150px;
+  background-color: #F4F4F6;
+  position: relative;
+  .simple-button_long {
+    width: 196px;
+    &::before, &::after {
+      content: none;
+    }
+  }
+}
+.headers-footers-container {
+    padding: 0 0px 0 0px;
+    max-width: 100vw;
+  }

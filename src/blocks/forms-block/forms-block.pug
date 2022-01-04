@@ -1,25 +1,26 @@
 include ../date-picker/date-picker.pug
 include ../card/card.pug
-
-.forms-block
-  .layer 
-  include ../logo/logo.html
-  .forms-block__horizontal-block
-    .forms-block__vertical-block
-      include ../check-in-form/check-in-form.pug
-      .forms-block__form-wrapper
-        include ../reg-form/reg-form.pug
-    .forms-block__vertical-block
-      include ../booking-form/booking-form.pug
-      .forms-block__form-wrapper
-        include ../login-form/login-form.pug
-    .forms-block__vertical-block
-      .forms-block__date-picker
-        +addAirDatePicker({
-          dateIn: "2019, 8, 23",
-          dateOut: "2019, 8, 19",
-          isOpen: true
-         })
-      .forms-block__card
-        +card({room: '888'})
-        +card({room: '840'})
+section.forms-block-wrapper
+  .container
+    .forms-block
+      //- .layer 
+      include ../logo/logo.html
+      .forms-block__horizontal-block
+        .forms-block__vertical-block
+          include ../check-in-form/check-in-form.pug
+          .forms-block__form-wrapper
+            include ../reg-form/reg-form.pug
+        .forms-block__vertical-block
+          include ../booking-form/booking-form.pug
+          .forms-block__form-wrapper
+            include ../login-form/login-form.pug
+        .forms-block__vertical-block
+          .forms-block__date-picker
+            +addAirDatePicker({
+              dateIn: "2019, 8, 23",
+              dateOut: "2019, 8, 19",
+              isOpen: true
+            })
+          .forms-block__card
+            +card({room: '888'})
+            +card({room: '840'})

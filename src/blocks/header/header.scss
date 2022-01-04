@@ -1,0 +1,45 @@
+.header {
+  position: relative;
+  z-index: 10;
+  background-color: #fff;
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1440px;
+    background-color: #fff;
+    padding: 15px 140px;
+  }
+  &__nav {
+    display: flex;
+    align-items: center;
+  }
+  &__nav a{
+    @include type-body;
+    color: $color-dark-50;
+    margin-right: 20px;
+    text-decoration: none;
+  }
+  &__nav a:first-child{
+    color: $color-dark-75;
+    font-weight: 700;
+  }
+  &__nav {
+    &_services, &_agreements{
+      position: relative;
+      margin-right: 36px;
+      &::after {
+        content: "";
+        @include dropdown-mark;
+        left: inherit;
+        right: -16px;
+        width: 6px;
+        height: 6px;
+      }
+    }
+  }
+  &__nav button {
+    margin-left: 20px;
+  }
+}

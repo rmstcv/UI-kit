@@ -1,6 +1,7 @@
 .forms-block {
-  position: relative;
-  margin-top: 150px;
+  // position: relative;
+  
+  padding-bottom: 140px;
   &__horizontal-block {
     display: flex;
     justify-content: space-between;
@@ -10,23 +11,29 @@
     display: flex;
     flex-direction: column;
   }
-  &__form-wrapper {
-    margin-top: 40px;
-  }
+  // &__form-wrapper {
+  //   margin-top: 40px;
+  // }
   &__date-picker {
     @include input-large;
   }
-  &__card .room-card {
-    margin-top: 40px;
-  }
+  // &__card .room-card {
+  //   margin-top: 40px;
+  // }
 }
 
-.layer {
+.forms-block-wrapper {
+  padding-top: 150px;
+  position: relative;
   background-color: #F4F4F6;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  height: calc(150px + 100%);
-  z-index: -1000;
-  position: absolute;
-  top: -150px;
 }
+
+// .layer {
+//   background-color: #F4F4F6;
+//   width: 100vw;
+//   margin-left: calc(50% - 50vw);
+//   height: calc(150px + 100%);
+//   z-index: -1000;
+//   position: absolute;
+//   top: -150px;
+// }

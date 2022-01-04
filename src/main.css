@@ -22,4 +22,7 @@ html {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 141px 0 140px;
+  position: relative;
+  /* overflow-x: hidden;
+  background-color: #fff; */
 }
