@@ -7,27 +7,20 @@
     align-items: center;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: 1440px;
-    background-color: #fff;
+    max-width: $container-width;
     padding: 15px 140px;
   }
   &__nav {
     display: flex;
     align-items: center;
   }
-  &__nav a{
+  &__nav {
+    position: relative;
     @include type-body;
     color: $color-dark-50;
     margin-right: 20px;
     text-decoration: none;
-  }
-  &__nav a:first-child{
-    color: $color-dark-75;
-    font-weight: 700;
-  }
-  &__nav {
-    &_services, &_agreements{
-      position: relative;
+    &_drop {
       margin-right: 36px;
       &::after {
         content: "";
@@ -39,7 +32,27 @@
       }
     }
   }
+  &__nav a:first-child{
+    color: $color-dark-75;
+    font-weight: 700;
+  }
   &__nav button {
     margin-left: 20px;
+  }
+  &__divider {
+    width: 1px;
+    height: 30px;
+    left: 1179px;
+    top: 270px;
+    background: rgba(31, 32, 65, 0.1);
+    margin-right: 20px;
+  }
+  &__user-name {
+    @include type-body;
+    color: $color-dark-50
+  }
+  &__logged {
+    display: flex;
+    align-items: center;
   }
 }

@@ -1,0 +1,56 @@
+.footer {
+  background-color: #fff;
+  &__logo {
+    margin-right: 40px;
+  }
+  &__wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: $container-width;
+    padding: 100px 140px;
+  }
+  &__logo-descr {
+    margin-top: 20px;
+    max-width: 260px;
+  }
+  &__text {
+    @include type-body;
+    &_thin {
+      text-transform: none;
+      font-weight: 500;
+      color: $color-dark-50;
+      line-height: 17.07px;
+    }
+    &_bold {
+      text-transform: uppercase;
+      font-weight: 700;
+      color: $color-dark-100;
+      font-size: 12px;
+      line-height: 14.6px;
+    }
+  }
+  ul {
+    list-style-type: none;
+    li {
+      margin-top: 20px;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+  &__subscr{
+    .footer__text {
+      margin-bottom: 20px;
+      max-width: 260px;
+    }
+  }
+  nav:first-of-type{
+    margin-right: 57px;
+  }
+  nav:last-of-type{
+    margin-right: 51px;
+    margin-left: 87px;
+  }
+}

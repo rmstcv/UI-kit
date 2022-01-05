@@ -1,5 +1,4 @@
 .forms-block {
-  // position: relative;
   
   padding-bottom: 140px;
   &__horizontal-block {
@@ -11,15 +10,15 @@
     display: flex;
     flex-direction: column;
   }
-  // &__form-wrapper {
-  //   margin-top: 40px;
-  // }
+  &__form-wrapper {
+    margin-top: 40px;
+  }
   &__date-picker {
     @include input-large;
   }
-  // &__card .room-card {
-  //   margin-top: 40px;
-  // }
+  &__card .room-card {
+    margin-top: 40px;
+  }
 }
 
 .forms-block-wrapper {
@@ -27,13 +26,3 @@
   position: relative;
   background-color: #F4F4F6;
 }
-
-// .layer {
-//   background-color: #F4F4F6;
-//   width: 100vw;
-//   margin-left: calc(50% - 50vw);
-//   height: calc(150px + 100%);
-//   z-index: -1000;
-//   position: absolute;
-//   top: -150px;
-// }

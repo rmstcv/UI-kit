@@ -1,5 +1,10 @@
-section.headers-footers-wrapper
+include ../header/header.pug
+section.headers-footers
   .container
     include ../logo/logo.html
-  .headers-footers-container
-    include ../header/header.pug
+  .headers-footers__container
+    +header({})
+    .headers-footers__divider
+    +header({logged: true, name: "Юлий Цезарь"})
+    .headers-footers__divider
+    include ../footer/footer.pug
