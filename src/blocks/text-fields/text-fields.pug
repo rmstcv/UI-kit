@@ -37,7 +37,7 @@ include ../dropdown-date/dropdown-date.pug
 
   .dropdown-wrapper
     .date-dropdown-wrapper  
-    .field-wrapper
+    .field-wrapper.field-wrapper_dropdown
       +dropdown-date({
         fieldName: "DATE DROPDOWN",
         type: "text", 
@@ -46,15 +46,15 @@ include ../dropdown-date/dropdown-date.pug
         isSmall: true,
         isDouble: true
       })
-      .field-wrapper
+      .field-wrapper.field-wrapper_dropdown
         +dropdown-date({
-          fieldName: "DATE DROPDOWN", 
+          fieldName: "FILTER DATE DROPDOWN", 
           type: "text", 
           dateIn: "2019, 7, 19",
           dateOut: "2019, 7, 23",
-          isLarge: true
+          isMedium: true
         })
-    .field-wrapper
+    .field-wrapper.field-wrapper_dropdown
       +field-default({
           fieldName: "SUBSCRIPTION TEXT FIELD", 
           type: "email", 

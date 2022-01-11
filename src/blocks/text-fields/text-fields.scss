@@ -10,6 +10,9 @@
         }
       }
     }
+    &_dropdown {
+      margin-top: 40px;
+    }
     &__text {
       position: absolute;
       right: 0;
@@ -17,29 +20,8 @@
       color: $color-dark-50;
       font-weight: normal;
     }
-    // .field-default {
-    //   &__text-wrapper {
-    //     display: flex;
-    //     justify-content: space-between;
-    //   }
-    //   &__text {
-    //     &_light {
-    //       color: $color-dark-50;
-    //       font-weight: normal;
-    //     }
-    //   }
-    // }
   }
   .field-wrapper:first-child {
     margin-top: 0;
   }
-  // .dropdown-wrapper {
-  //   .date-dropdown-wrapper {
-  //     display: flex;
-  //     justify-content: space-between;
-  //   }
-  //   // .field-default {
-  //   //   margin-top: 42px;
-  //   // }
-  // }
 }

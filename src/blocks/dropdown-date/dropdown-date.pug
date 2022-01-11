@@ -26,41 +26,43 @@
 
 include ../date-picker/date-picker.pug
 mixin dropdown-date (options)
-  - 
-    var fieldLength = ""
-    fieldLength += options.isSmall ? "dropdown-date__input_small" :
-    options.isMedium ? "dropdown-date__input_medium" :
-    options.isLarge ? "dropdown-date__input_large" :
-    "dropdown-date__input_medium"
-  div(class="dropdown-date js-dropdown-date")
-    if options.isDouble
+  //- - 
+  //-   var fieldLength = ""
+  //-   fieldLength += options.isSmall ? "dropdown-date_small" :
+  //-   options.isMedium ? "dropdown-date_medium" :
+  //-   options.isLarge ? "dropdown-date_large" :
+  //-   "dropdown-date_medium"
+  //- div(class=`dropdown-date js-dropdown-date`)
+  if options.isDouble
+    div(class=`dropdown-date js-dropdown-date`)
       .dropdown-date__double-wrapper
         .dropdown-date__double
           p(class="dropdown-date__text")= options.fieldName
           .dropdown-date__check-wrapper.js-dropdown-date__check-wrapper
             .dropdown-date__check-mark
-          input(class=`dropdown-date__input dropdown-date__input-check-in js-dropdown-date__input-check-in ${fieldLength}` type="text" placeholder= options.placeholder value="" disabled)
+          input(class=`dropdown-date__input dropdown-date__input-check-in dropdown-date__input_small js-dropdown-date__input-check-in` type="text" placeholder= options.placeholder value="" disabled)
         .dropdown-date__double
           p(class="dropdown-date__text")= options.fieldNameDouble
           .dropdown-date__check-wrapper.js-dropdown-date__check-wrapper
             .dropdown-date__check-mark
-          input(class=`dropdown-date__input dropdown-date__input-check-out js-dropdown-date__input-check-out ${fieldLength}` type="text" placeholder= options.placeholder value="" disabled)
+          input(class=`dropdown-date__input dropdown-date__input-check-out dropdown-date__input_small js-dropdown-date__input-check-out` type="text" placeholder= options.placeholder value="" disabled)
       div(class=`dropdown-date__date-picker-double js-dropdown-date__date-picker-double`)
         +addAirDatePicker({
           dateIn: options.dateIn,
           dateOut: options.dateOut,
           isOpen: options.isOpen
         })
-    else 
+  else 
+    div(class=`dropdown-date dropdown-date_medium js-dropdown-date`)
       .dropdown-date__single
         p(class="dropdown-date__text")= options.fieldName
         .dropdown-date__check-wrapper.js-dropdown-date__check-wrapper
           .dropdown-date__check-mark
-        input(class=`dropdown-date__input dropdown-date__input-check js-dropdown-date__input-check ${fieldLength}` type="text" placeholder= options.placeholder value="" disabled)
-      div(class=`dropdown-date__date-picker-single js-dropdown-date__date-picker-single`)
-        +addAirDatePicker({
-          dateIn: options.dateIn,
-          dateOut: options.dateOut,
-          isOpen: options.isOpen
-        })
-  
+        input(class=`dropdown-date__input dropdown-date__input-check js-dropdown-date__input-check` type="text" placeholder= options.placeholder value="" disabled)
+        div(class=`dropdown-date__date-picker-single js-dropdown-date__date-picker-single`)
+          +addAirDatePicker({
+            dateIn: options.dateIn,
+            dateOut: options.dateOut,
+            isOpen: options.isOpen
+          })
+    

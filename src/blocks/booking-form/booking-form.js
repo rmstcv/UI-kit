@@ -1,4 +1,3 @@
-// import data from '../../data.json';
 import addDropdownDate from '../dropdown-date/dropdown-date';
 import insertRoomInfo from '../room-short-info/room-short-info';
 import addSpace from '../../libs/add-spaces';

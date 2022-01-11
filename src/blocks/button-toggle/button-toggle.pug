@@ -15,7 +15,7 @@ mixin toggle-button(options)
       input(class="toggle-button__custom" type="checkbox" name=options.name options=options.content checked)
     else 
       input(class="toggle-button__custom" type="checkbox" name=options.name options=options.content)
-      label(class="toggle-button__label" for=options.content)
-        .toggle-button__icon-out
-          .toggle-button__icon-in
-        p(class="toggle-button__content")= options.content
+    label(class="toggle-button__label" for=options.content)
+      .toggle-button__icon-out
+        .toggle-button__icon-in
+      p(class="toggle-button__content")= options.content
