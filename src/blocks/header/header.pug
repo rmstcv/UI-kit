@@ -11,7 +11,7 @@ mixin header(options)
   header.header
     .header__wrapper
       include ../logo-text/logo-text.pug
-      nav.header__nav
+      nav.header__nav-wrapper
         a(class="header__nav header__nav_about" href="/mock-address/change-me") О нас
         div(class="header__nav header__nav_services header__nav_drop" href="/mock-address/change-me") Услуги
         a(class="header__nav header__nav_vacancies" href="/mock-address/change-me") Вакансии
@@ -23,5 +23,5 @@ mixin header(options)
             .header__user-name= options.name
         else
           .header__no-logged
-            +simple-button({type: 'uncolored',text: 'войти'})
-            +simple-button({type: 'long',text: 'зарегестрироваться'})
+            +simple-button({type: 'uncolored-header',text: 'войти'})
+            +simple-button({type: 'long-header',text: 'зарегестрироваться'})

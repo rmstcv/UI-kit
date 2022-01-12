@@ -6,10 +6,13 @@
         +simple-button({type: 'uncolored',text: 'click me'}) - нецветная кнопка
         +simple-button({type: 'unborded',text: 'click me'}) - кнопка без бордера
         +simple-button({type: 'long',text: 'click me'}) - широкая кнопка
+        +simple-button({type: 'uncolored-header',text: 'click me'}) - нецветная кнопка для header
+        +simple-button({type: 'long-header',text: 'click me'}) - широкая кнопка для header
 
 mixin simple-button(options)
-  - var type = options.type
-  - var text = options.text
+  - 
+    var type = options.type
+    var text = options.text
   case type 
     when 'colored'
       button(class='simple-button simple-button_colored')= text  
@@ -19,5 +22,9 @@ mixin simple-button(options)
       button(class='simple-button simple-button_unborded')= text
     when 'long'
       button(class='simple-button simple-button_long')= text
+    when 'long-header'
+      button(class='simple-button simple-button_long simple-button_long_header')= text
+    when 'uncolored-header'
+      button(class='simple-button simple-button_uncolored simple-button_uncolored_header')= text
     default 
       button(class='simple-button simple-button_colored')= text  

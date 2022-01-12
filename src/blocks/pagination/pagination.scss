@@ -29,23 +29,15 @@
   &:before {
     content: "";
     position: absolute;
-    width: 10px;
-    height: 10px;
-    border-bottom: 2px solid #fff;
-    border-right: 2px solid #fff;
-    top: 18px;
-    left: 22px;
-    transform: rotate(-45deg);
-  }
-  &:after {
-    content: "";
-    display: block;
-    background-color: #fff;
-    width: 15px;
-    height: 2px;
-    position: absolute;
-    top: 19px;
-    left: 14px;
+    width: 16px;
+    height: 18px;
+    top: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    background: no-repeat url("blocks/pagination/arrow_forward.svg");
+    margin: 0;
+    padding: 0;
+    border: none;
   }
 }
 
@@ -53,22 +45,14 @@
   &:before {
     content: "";
     position: absolute;
-    width: 10px;
-    height: 10px;
-    border-bottom: 2px solid #fff;
-    border-right: 2px solid #fff;
-    top: 18px;
-    left: 18px;
-    transform: rotate(135deg);
-  }
-  &:after {
-    content: "";
-    display: block;
-    background-color: #fff;
-    width: 15px;
-    height: 2px;
-    position: absolute;
-    top: 19px;
-    left: 13px;
+    width: 16px;
+    height: 18px;
+    top: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    background: no-repeat url("blocks/pagination/arrow_back.svg");
+    margin: 0;
+    padding: 0;
+    border: none;
   }
 }

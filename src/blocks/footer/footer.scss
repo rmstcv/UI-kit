@@ -11,15 +11,14 @@
   }
   &__wrapper {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding-bottom: 100px;
+    padding-bottom: 128px;
   }
   &__logo-descr {
-    margin-top: 20px;
+    margin-top: 15px;
     max-width: 260px;
   }
   &__text {
+    margin-top: 5px;
     @include type-body;
     &_thin {
       text-transform: none;
@@ -46,7 +45,7 @@
   }
   &__subscr{
     .footer__text {
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       max-width: 260px;
     }
   }
@@ -54,7 +53,7 @@
     margin-right: 57px;
   }
   nav:last-of-type{
-    margin-right: 51px;
-    margin-left: 87px;
+    margin-right: 40px;
+    margin-left: 95px;
   }
 }

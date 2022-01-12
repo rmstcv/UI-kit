@@ -36,22 +36,17 @@
     right: 0;
   }
   &__check-mark {
-    @include dropdown-mark;
     &_subscr {
-      position: absolute;
-      width: 11px;
-      height: 11px;
-      border-color: $color-second;
-      transform: rotate(-135deg) translate(-50%);
-      left: 13px;
-      top: 14px;
       &::after {
         content: "";
         position: absolute;
-        background-color: $color-second;
-        width: 12px;
-        height: 2px;
-        transform: rotate(135deg) translateX(45%) translateY(-65%);
+        width: 16px;
+        height: 18px;
+        top: 50%;
+        right: 4px;
+        transform: translate(-50%, -50%);
+        background: no-repeat url("blocks/fields/arrow_forward_black.svg");
+        cursor: pointer;
       }
     }
   }
