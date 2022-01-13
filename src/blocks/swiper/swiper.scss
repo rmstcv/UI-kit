@@ -1,0 +1,49 @@
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+:root {
+  --swiper-theme-color: white;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border: 4px solid #fff;
+}
+
+.swiper-button-next:after {
+  border-bottom: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+.swiper-button-prev:after {
+  border-top: none;
+  border-right: none;
+  transform: rotate(45deg);
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #fff;
+}
+
+.swiper-pagination-bullet {
+  border: 1.5px solid #fff;
+  opacity: 1;
+  background: none;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets, 
+.swiper-pagination-bullets.swiper-pagination-horizontal, 
+.swiper-pagination-custom, .swiper-pagination-fraction {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 3.75px 0 0;
+}

@@ -1,6 +1,7 @@
 import data from '../../data.json';
 import insertRoomInfo from '../room-short-info/room-short-info';
 import addStars from '../button-rate/button-rate';
+import swiper from '../swiper/swiper';
 
 class Card {
   constructor(cardElem) {
@@ -32,11 +33,12 @@ class Card {
   }
 
   addCardImage() {
-    const card = document.createElement('div');
-    card.classList.add('room-card__image');
-    const [img] = this.cardRoom.images;
-    card.innerHTML = `<img src=${img} alt="image" loading="lazy" width="270">`;
-    this.cardElem.prepend(card);
+    this.cardRoom.images.forEach((item) => {
+      const img = document.createElement('div');
+      img.classList.add('swiper-slide');
+      img.innerHTML = `<img src=${item} alt="image" loading="lazy" width="270">`;
+      this.findElem('.swiper-wrapper').prepend(img);
+    });
   }
 
   addStarsRate() {
@@ -63,4 +65,5 @@ cards.forEach((elem) => {
   const card = new Card(elem);
   card.cardInit();
   insertRoomInfo(room, elem.childNodes[1].childNodes[0]);
+  swiper();
 });

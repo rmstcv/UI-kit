@@ -73,6 +73,7 @@
     margin-top: 45px;
   }
   &__simple-buttons {
+    display: flex;
     &_colored {
       margin-top: 16px;
       .simple-button:last-child {
