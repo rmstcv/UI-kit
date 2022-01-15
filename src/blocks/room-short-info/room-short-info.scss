@@ -1,34 +1,32 @@
 .room-short-info {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-    height: 2rem;
+    align-items: center;
   &__num {
     @include type-h1;
     font-size: 14px;
-    display: inline-block;
-    line-height: 1rem;
   }
   &__room {
     @include type-h1;
-    display: inline-block;
-    line-height: 1rem;
+    margin-left: 5px;
   }
   &__class {
     @include type-h3;
-    display: inline-block;
     font-weight: normal;
     margin-left: 5px;
-    line-height: 1rem;
     color: $color-second;
     font-weight: 700;
   }
   &__price {
     @include type-h3;
     color: $color-dark-50;
+    font-size: 1.4rem;
   }
   &__text {
+    @include type-h3;
+    text-transform: inherit;
     margin-left: 5px;
     color: $color-dark-50;
+    font-weight: 500;
   }
 }

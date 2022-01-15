@@ -10,4 +10,12 @@ function addCurrentDate() {
   elem.children[10].classList.add('-current-');
 }
 
+function remNav() {
+  const navsPrev = document.querySelectorAll('.swiper-button-prev');
+  const navsNext = document.querySelectorAll('.swiper-button-next');
+  navsPrev[1].style.display = 'none';
+  navsNext[1].style.display = 'none';
+}
+
+remNav();
 addCurrentDate();

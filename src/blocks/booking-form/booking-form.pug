@@ -1,6 +1,7 @@
 include ../dropdown-date/dropdown-date.pug
 include ../dropdown/dropdown.pug
 include ../room-short-info/room-short-info.pug
+include ../button/button.pug
 .booking-form 
   +roomShortInfo({})
   .booking-form__dates
@@ -27,3 +28,4 @@ include ../room-short-info/room-short-info.pug
       confirmPanel: true
     })
   .booking-form__calc
+  +simple-button({type: 'long',text: 'забронировать'})

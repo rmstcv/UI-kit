@@ -10,4 +10,10 @@ function openCheckList(openedList) {
   checkbox.firstChild.lastChild.classList.add('checkbox-list_active');
 }
 
+function addSize() {
+  const checkBox = document.querySelector('.checkboxes-rich-block .checkbox-button');
+  checkBox.style.width = '23.6rem';
+}
+
+addSize();
 openCheckList('.checkbox-opened');

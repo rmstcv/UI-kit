@@ -10,16 +10,52 @@
     align-items: flex-end;
   }
   &__value-calc {
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: min-content max-content auto;
+    row-gap: 14px;
     @include type-body;
-    &:first-child{
-      margin-top: 20px;
+    line-height: initial;
+    & div:first-child {
+      width: max-content;
     }
-    &_big {
+    &_days-calc {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__calc-total {
       margin-top: 30px;
+      margin-bottom: 20px;
       @include type-h2;
+      display: flex;
+      justify-content: space-between;
+  }
+  &__value-sum{
+    justify-self: end;
+  }
+  &__info {
+    color: $color-dark-25;
+    width: 20px;
+    height: 20px;
+    border: 2px solid $color-dark-25;
+    border-radius: 20px;
+    position: relative;
+    margin-left: 5px;
+    cursor: pointer;
+    &::after {
+      content: "i";
+      position: absolute;
+      line-height: initial;
+      font-weight: 700;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
+  }
+  &__calc-line {
+    border-bottom: 1px dotted $color-dark-25;
+    flex: 1 1 auto;
+    height: 1.9rem;
   }
 }

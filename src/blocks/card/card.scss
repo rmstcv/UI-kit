@@ -5,7 +5,7 @@
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   border-radius: 4px;
   &__info {
-    padding: 20.12px 17px 19px 20px;
+    padding: 16px 17px 19px 20px;
   }
   &__divider {
     width: 100%;
@@ -15,7 +15,7 @@
     margin-top: 12px;
   }
   &__rate-wrapper {
-    margin-top: 8px;
+    margin-top: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -27,6 +27,22 @@
     font-weight: 700;
   }
   &__rate-info span {
+    font-weight: 500;
+  }
+
+  .room-short-info__num {
+    line-height: initial;
+  }
+
+  .room-short-info__room {
+    line-height: initial;
+    font-size: 1.9rem;
+  }
+  .room-short-info__price {
+    line-height: initial;
+  }
+  .room-short-info__text {
+    line-height: initial;
     font-weight: 500;
   }
 }

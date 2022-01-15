@@ -12,7 +12,7 @@
 }
 
 .checkboxes-rich-block {
-  max-width: 266px;
+  max-width: 264px;
   .checkbox-rich__name span {
     @include type-h3;
   }
@@ -24,21 +24,29 @@
     @include type-h3;
   }
   ul {
-    @include type-body;
     list-style: none;
     margin: 0;
     padding: 0;
+    width: 254px;
     li {
+      position: relative;
+      margin-top: 10px;
       &::before {
         content: "";
-        display: inline-block;
+        position: absolute;
         width: 10px;
         height: 10px;
         background-color: $color-dark-25;
         border-radius: 10px;
-        margin-right: 10.43px;
-        margin-top: 18px;
+        left: 0;
+        top: 7px;
       }
+    }
+    li > div {
+      @include type-body;
+      color: $color-dark-75;
+      padding-left: 20.43px;
+      text-transform: inherit;
     }
   }
 }

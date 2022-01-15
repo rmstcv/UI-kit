@@ -26,20 +26,21 @@ class BookingForm {
     const total = this.addSpace(addServices + services - sale + (price * days));
     if (days === 1) daysPostfix = 'сутки';
     const content = `
-    <div class = "booking-form__value-calc">
-      <div>${this.addSpace(this.roomData.price)}&#8381; x ${days} ${daysPostfix}</div>
-      <div>${this.addSpace(price * days)}&#8381;</div>
-    </div>
-    <div class = "booking-form__value-calc">
-      <div>Сбор за услуги: скидка ${this.addSpace(sale)}&#8381;</div>
-      <div>${addServices}&#8381;</div>
-    </div>
-    <div class = "booking-form__value-calc">
-      <div>Сбор за дополнительные услуги</div>
-      <div>${services}&#8381;</div>
-    </div>
-    <div class = "booking-form__value-calc booking-form__value-calc_big">
+      <div class = "booking-form__value-calc booking-form__value-calc_days-calc">
+        <div>${this.addSpace(this.roomData.price)}&#8381; x ${days} ${daysPostfix}</div>
+        <div class = "booking-form__value-sum">${this.addSpace(price * days)}&#8381;</div>
+      </div>
+      <div class = "booking-form__value-calc">
+        <div>Сбор за услуги: скидка ${this.addSpace(sale)}&#8381;</div>
+        <div class = "booking-form__info"></div>
+        <div class = "booking-form__value-sum">${addServices}&#8381;</div>
+        <div>Сбор за дополнительные услуги</div>
+        <div class = "booking-form__info"></div>
+        <div class = "booking-form__value-sum">${services}&#8381;</div>
+      </div>
+    <div class = "booking-form__calc-total">
       <div>Итого</div>
+      <div class = "booking-form__calc-line"></div>
       <div>${total}&#8381;</div>
     </div>
     `;

@@ -2,5 +2,8 @@
   display: flex;
   justify-content: space-between;
   margin-top: 145px;
-  // position: relative;
+  .label {
+    left: 20px;
+    top: -115px;
+  }
 }

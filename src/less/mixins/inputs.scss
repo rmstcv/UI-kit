@@ -4,11 +4,11 @@
   border: 1px solid $color-dark-25;
   border-radius: 4px;
   padding-left: 15px;
-  margin-top: 5px;
   font-size: 1.4rem;
   line-height: 2.4rem;
   color: $color-dark-75;
   background-color: rgba(0, 0, 0, 0);
+  display: block;
 }
 
 @mixin input-hover {
