@@ -1,3 +1,21 @@
+//- Принимает:
+//-   content {string} - номер комнаты
+//-   item: [{name:""}] {string} - значение аттрибута <input name="name">
+//-   isDropped {bool} - открытый или закрытый чекбокс
+//-   name {string} - подпись чекбокса
+//-   isRich {bool} - жирный текст чекбокса
+//- Вызов:
+        +checkbox({
+              item: [
+                {content: "Завтрак", name: "checkbox buttons"},
+                {content: "Письменный стол", name: "checkbox buttons"},
+              ],
+              isDropped: true,
+              name: 'expandable checkbox list',
+              isRich: true
+            }) 
+
+
 mixin checkbox(options)
   - 
     var droppedClass = ""

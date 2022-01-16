@@ -39,11 +39,6 @@
       "warn",
       2
     ],
-    // "func-style": ["warn","expression"],
-    // "func-call-spacing": [
-    //   "warn",
-    //   "never"
-    // ],
     "linebreak-style": 0
   }
 }

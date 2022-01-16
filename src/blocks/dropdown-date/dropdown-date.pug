@@ -26,13 +26,6 @@
 
 include ../date-picker/date-picker.pug
 mixin dropdown-date (options)
-  //- - 
-  //-   var fieldLength = ""
-  //-   fieldLength += options.isSmall ? "dropdown-date_small" :
-  //-   options.isMedium ? "dropdown-date_medium" :
-  //-   options.isLarge ? "dropdown-date_large" :
-  //-   "dropdown-date_medium"
-  //- div(class=`dropdown-date js-dropdown-date`)
   if options.isDouble
     div(class=`dropdown-date js-dropdown-date`)
       .dropdown-date__double-wrapper

@@ -1,10 +1,10 @@
-@import "./less/variables.scss";
 @import "./libs/fonts.css";
+@import "./less/variables.scss";
 @import "./less/mixins/types.scss";
 @import "./less/mixins/marks.scss";
 @import "./less/mixins/inputs.scss";
 @import "./less/mixins/form-container.scss";
-@import "/less/style.scss";
+@import "./less/style.scss";
 
 * {
   font-family: 'Montserrat', Arial, sans-serif;
@@ -23,6 +23,4 @@ html {
   margin: 0 auto;
   padding: 0 141px 0 140px;
   position: relative;
-  /* overflow-x: hidden;
-  background-color: #fff; */
 }

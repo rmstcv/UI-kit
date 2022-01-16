@@ -1,16 +1,32 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
-const CopyPlugin = require("copy-webpack-plugin");
-// const pug = {
-//   test: /\.pug$/,
-//   use: ['html-loader?attrs=false', 'pug-html-loader']
-// };
+const CopyPlugin = require('copy-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
 console.log('IS DEV', isDev);
+const isProd = !isDev;
+
+const optimization = () => {
+  const config = {
+    splitChunks: {
+      chunks: 'all'
+    }
+  }
+
+  if (isProd) {
+    config.minimizer = [
+      new CssMinimizerPlugin(),
+      new TerserPlugin()
+    ]
+  }
+
+  return config
+}
 
 const jsLoaders = () => {
   const loaders = [{
@@ -42,30 +58,20 @@ const config = {
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
-    // publicPath: '/'
   },
-  // resolve: {
-  //   extensions: ['.js']
-  // },
-  // optimization: {
-  //   splitChunks: {
-  //     chunks: 'all'
-  //   }
-  // },
+  optimization: optimization(),
   devServer: {
     port: 4200,
     static: path.join(__dirname, 'src'),
-    // hot: true,
-    // inline: true
-    // dry: true,
+    hot: isDev
   },
-  // externals: {
-  //   jquery: 'jQuery'
-  // },
+
   plugins: [
     new HtmlWebpackPlugin({
       template: './index.pug',
-      // inject: false
+      minify: {
+        collapseWhitespace: isProd
+      }
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css'
@@ -183,15 +189,6 @@ const config = {
       //     name: ('[name].[contenthash].[ext]'), // filename = (name, ext) => isDev ? `${name}.${ext}` : `${name}.[hash].${ext}`;
       //     outputPath: 'static/images/'
       //   }
-      // },
-
-
-
-
-      // {
-      //   test: /\.svg$/,
-      //   exclude: path.resolve(__dirname, './src/webfonts'),
-      //   use: ['@svgr/webpack'],
       // },
     ]
   }

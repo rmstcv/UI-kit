@@ -36,7 +36,7 @@ class Card {
     this.cardRoom.images.forEach((item) => {
       const img = document.createElement('div');
       img.classList.add('swiper-slide');
-      img.innerHTML = `<img src=${item} alt="image" loading="lazy" width="270">`;
+      img.innerHTML = `<img src=${item} alt="image" loading="lazy" width="270" height="151">`;
       this.findElem('.swiper-wrapper').prepend(img);
     });
   }
