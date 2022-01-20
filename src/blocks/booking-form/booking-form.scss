@@ -1,7 +1,8 @@
 .booking-form {
   @include form-container;
   background-color: #fff;
-  &__dates, &__guests{
+  &__dates,
+  &__guests {
     margin-top: 20px;
   }
   &__room-info {
@@ -16,7 +17,7 @@
     row-gap: 14px;
     @include type-body;
     line-height: initial;
-    & div:first-child {
+    div:first-child {
       width: max-content;
     }
     &_days-calc {
@@ -25,13 +26,13 @@
     }
   }
   &__calc-total {
-      margin-top: 30px;
-      margin-bottom: 20px;
-      @include type-h2;
-      display: flex;
-      justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    @include type-h2;
+    display: flex;
+    justify-content: space-between;
   }
-  &__value-sum{
+  &__value-sum {
     justify-self: end;
   }
   &__info {

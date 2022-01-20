@@ -1,13 +1,13 @@
 .field-default {
   position: relative;
   &_small {
-    @include input-small
+    @include input-small;
   }
   &_medium {
-    @include input-medium
+    @include input-medium;
   }
   &_large {
-    @include input-large
+    @include input-large;
   }
   &__text {
     @include type-h3;
@@ -33,7 +33,6 @@
     width: 44px;
     height: 44px;
     position: absolute;
-    margin-top: 5px;
     right: 0;
   }
   &__check-mark {

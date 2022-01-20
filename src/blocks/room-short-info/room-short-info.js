@@ -1,8 +1,8 @@
 import addSpace from '../../libs/add-spaces';
-import getDataRoom from '../../libs/data-finder';
+import getData from '../../libs/get-json-data';
 
-function insertRoomInfo(room, elem) {
-  const data = getDataRoom(room);
+async function insertRoomInfo(room, elem) {
+  const data = await getData('data.json', room);
   const roomNode = elem;
   roomNode.firstElementChild.children[1].innerHTML = data.room;
   roomNode.firstElementChild.children[2].innerHTML = data.class;
