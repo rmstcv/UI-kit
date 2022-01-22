@@ -12,19 +12,24 @@ class BookingForm {
 
   insertCalcInfo() {
     const calcInfoElem = document.createElement('div');
-    const price = Number(this.roomData.price.replace(/\s/g, ''));
+    const price = Number(this.roomData.price);
     const dayIn = new Date('Tue Jul 23 2019 00:00:00 GMT+0500 (Екатеринбург, стандартное время)');
     const dayOut = new Date('Tue Jul 27 2019 00:00:00 GMT+0500 (Екатеринбург, стандартное время)');
     const days = (dayOut.getTime() - dayIn.getTime()) / 86400000;
     let daysPostfix = 'суток';
-    const addServices = 0;
-    const sale = 2179;
-    const services = 300;
+    let addServices = 0;
+    let sale = 2179;
+    let services = 300;
+    if (!this.roomData.price) {
+      addServices = 0;
+      sale = 0;
+      services = 0;
+    }
     const total = addSpace(addServices + services - sale + (price * days));
     if (days === 1) daysPostfix = 'сутки';
     const content = `
       <div class = "booking-form__value-calc booking-form__value-calc_days-calc">
-        <div>${addSpace(this.roomData.price)}&#8381; x ${days} ${daysPostfix}</div>
+        <div>${addSpace(price)}&#8381; x ${days} ${daysPostfix}</div>
         <div class = "booking-form__value-sum">${addSpace(price * days)}&#8381;</div>
       </div>
       <div class = "booking-form__value-calc">
@@ -54,7 +59,13 @@ class BookingForm {
 (async () => {
   addDropdownDate('.booking-form .js-date-picker');
   localStorage.setItem('room', '888');
-  const room = localStorage.getItem('room');
+  let room;
+  try {
+    const roomData = localStorage.getItem('room');
+    room = roomData;
+  } catch (e) {
+    room = '888';
+  }
   const data = await getData('data.json', room);
   const bookingForm = new BookingForm(data, room);
   bookingForm.init();

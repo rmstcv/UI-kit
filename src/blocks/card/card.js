@@ -8,6 +8,7 @@ swiper();
 class Card {
   constructor(cardElem) {
     this.cardElem = cardElem;
+    this.room = cardElem.getAttribute('data-room');
   }
 
   findElem(elemClass) {
