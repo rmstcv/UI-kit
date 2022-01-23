@@ -74,6 +74,7 @@ const config = {
     new CopyPlugin({
       patterns: [
         { from: "assets/images", to: "assets/images" },
+        { from: "data.json", to: "" },
       ],
     }),
   ],
