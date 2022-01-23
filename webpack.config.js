@@ -38,18 +38,8 @@ const jsLoaders = () => {
         '@babel/plugin-transform-runtime'
       ]
     },
-    // loader: 'eslint-loader',
-    //             options: {
-    //                 fix: true,
-    //                 eslintPath: 'eslint',
-    //                 emitError: true,
-    //                 emitWarning: true
-    //             }
   }]
 
-  // if (isDev) {
-  //   loaders.push('eslint-loader')
-  // }
   return loaders
 }
 
@@ -134,65 +124,6 @@ const config = {
           pretty: false
         }
       },
-      //  {
-      //   test: /\.js$/,
-      //   exclude: /node_modules/,
-      //   use: {
-      //     loader: 'babel-loader',
-      //     options: {
-      //       presets: ['@babel/preset-env']
-      //     }
-      //   }
-      // },
-      //  {
-      //           test: /jquery.+\.js$/,
-      //           use: [{
-      //               loader: 'expose-loader',
-      //               options: 'jQuery'
-      //           },{
-      //               loader: 'expose-loader',
-      //               options: '$'
-      //           }]
-      //       },
-      // {
-      //   test: /\.(s[ac]ss|css)$/,
-      //   use: [
-      //   {loader: MiniCssExtractPlugin.loader},
-      //   {loader: 'css-loader'
-      // },
-      //   {loader: 'sass-loader'},
-      //   ]
-      // },
-
-      // {
-      //   test: /\.pug$/,
-      //   use: ['pug-loader']
-      // }, 
-
-      //        {
-      //   test: /\.pug$/,
-      //   use: [{
-      //     loader: 'html-loader'
-      //   }, {
-      //     loader: 'pug-html-loader',
-      //     options: {
-      //       exports: false
-      //     }
-      //   }]
-      // },
-      //   {
-      //     test: /\.html$/,
-      //     exclude: /node_modules/,
-      //     loader: 'html-loader'
-      // }, 
-      // {
-      //   test: /\.(png|jpg|gif|svg)$/,
-      //   loader: 'file-loader',
-      //   options: {
-      //     name: ('[name].[contenthash].[ext]'), // filename = (name, ext) => isDev ? `${name}.${ext}` : `${name}.[hash].${ext}`;
-      //     outputPath: 'static/images/'
-      //   }
-      // },
     ]
   }
 }

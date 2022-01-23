@@ -64,10 +64,10 @@ class DatePicker {
       day: 'numeric',
     };
     if (checkInput) {
-      if (!dateIn) dateCheckIn = 'ДД мес.';
-      if (!dateOut) dateCheckOut = 'ДД мес.';
-      dateCheckIn = dateCheckIn.toLocaleString('ru', optionsDateSingle);
-      dateCheckOut = dateCheckOut.toLocaleString('ru', optionsDateSingle);
+      if (!dateIn) dateCheckIn = 'ДД мес';
+      if (!dateOut) dateCheckOut = 'ДД мес';
+      dateCheckIn = dateCheckIn.toLocaleString('ru', optionsDateSingle).replace(/\./g, '');
+      dateCheckOut = dateCheckOut.toLocaleString('ru', optionsDateSingle).replace(/\./g, '');
       checkInput.value = `${dateCheckIn} - ${dateCheckOut}`;
     }
     if (checkInInput && checkOutInput) {
